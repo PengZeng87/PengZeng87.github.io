@@ -80,7 +80,9 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/gallery">图片&amp;视频</a></li>
+				<li><a href="/tags/photo">图片</a></li>
+	        
+				<li><a href="/tags/video">视频</a></li>
 	        
 				<li><a href="/tags/cv">我的简历</a></li>
 	        
@@ -140,6 +142,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -154,13 +158,15 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/gallery">图片&amp;视频</a></li>
+					<li style="width: 20%"><a href="/tags/photo">图片</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/cv">我的简历</a></li>
+					<li style="width: 20%"><a href="/tags/video">视频</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/about">关于我</a></li>
+					<li style="width: 20%"><a href="/tags/cv">我的简历</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/about">关于我</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,19 +183,19 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-注册MSComm32.ocx串口控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MFC中加入控制台Console" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/注册MSComm32.ocx串口控件/">注册MSComm32.ocx串口控件</a>
+      <a class="article-title" href="/2016/03/10/MFC中加入控制台Console/">MFC中加入控制台Console</a>
     </h1>
   
 
         
-        <a href="/2016/03/10/注册MSComm32.ocx串口控件/" class="archive-article-date">
+        <a href="/2016/03/10/MFC中加入控制台Console/" class="archive-article-date">
   	<time datetime="2016-03-10T12:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-10</time>
 </a>
         
@@ -197,11 +203,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>具体步骤：</p>
-<ol>
-<li>将文件MSComm32.ocx复制粘贴到C:\Windows\system32目录下，如果是64位的系统，则放在C:\Windows\sysWOW64目录下；
+        <ol>
+<li>包含头文件：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"io.h"</span>  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fcntl.h"</span>  </span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2016/03/10/注册MSComm32.ocx串口控件/#more">more >></a>
+          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/#more">more >></a>
         
       
 
@@ -216,10 +221,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">串口通信</a>
         		</li>
       		
 		</ul>
@@ -240,7 +241,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/10/注册MSComm32.ocx串口控件/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/">展开全文 >></a>
         </p>
       
 
@@ -921,10 +922,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -934,6 +931,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -969,15 +970,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三维重建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
