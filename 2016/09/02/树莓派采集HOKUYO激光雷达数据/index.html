@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>树莓派采集HOKUYO激光雷达数据 | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。">
 <meta name="keywords" content="树莓派,mrpt,HOKUYO,激光雷达">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派采集HOKUYO激光雷达数据">
-<meta property="og:url" content="http://yoursite.com/2016/09/02/树莓派采集HOKUYO激光雷达数据/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。">
 <meta property="og:locale" content="zh-CN">
@@ -306,7 +306,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3awU7DMBAEUP7/p0Hi3KQzazsF6eWE2gL7HCl2Z/frK76+f6/7d6+u+89f/YX71zdfeHh4eKPS74ub/Xz/d5J6rpa4WFA8PDy8Y7z7zWD2UL4qqMXk9eDh4eH9NV5bbrKFzF7Bw8PD+y+8JFCYhRpJbIGHh4f313hJGJFsDHsXLo93N2QteHh4eF1Pqo4VPvvzwf4eHh4e3kJXPbny4KCNPNrN4MVv4eHh4R3g5YfjvM2/a1ygHdiqJxHw8PDwRrx8ZKoNI1bYs+j2xSfx8PDwjvHyMdO87ZSPWN2HsPmwwotK8PDw8A7zZs2qdlESzLYtCg8PD+8Ar40k8jA3DyDy5Z69goeHh/cMLz/Izn6rZeeH9WKMAA8PD+8Yrw0C8sZ/fmherxMPDw/vBG89XGgf7u3GkwcoxbwDHh4eXslbaT7NgoO9wwRvIgk8PDy8A7zk3+R7y654Ny89OlLj4eHhbeW1LajiC38QT7ShxvC+4eHh4W3l5QUlhc4+04YUeHh4eJ/lzTaGJGLIH/q7xq22Hanx8PDwgvPwrFXfHnPzSGIWQODh4eE9w8sPrCstq1mc0W4PL5YSDw8P7wAvJ81yjvyBfgKJh4eHd4KXF5SHs/mGsTJiFdWGh4eHd4CX7BttGJF8ctb0SpbyzT3Ew8PD28RLjr9tVDFrniX4/DiOh4eHd4630sjPh0pnW0v+7uUNwMPDwzvGm4UFs7LacmfPfzw8PLwTvO/ySsptm1jrce2b+4aHh4e3lbcSVeRjATlgJYzYnMTg4eHh3b6bbwbtAXoWFrcx8ZvlxsPDwzvGax/K64fg5HA/27qK1cLDw8N7nJcj2/GCfDmKlBoPDw/vcV4eB+Shw4kBBTw8PLxneG3EsPJYzzeMDY0uPDw8vAO82Vf9/Fg8G8Bqb8Cws4eHh4fX8X4A7imccd9VZl4AAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQVIDMQwEQP7/aajiCjEzlh320HtKhSVx78FSRv74iK/P7+vn6/X9P69Xn7n+rlefcOzCw8PD21r6ekHrd9bvt7Dkv5I14+Hh4d3m5Rt0fk+xiBfI9TvrNePh4eE9gde2vG3BmLf1eHh4eM/krUvFXtl4UGHAw8PDi3lJGJHcP4kzktJyMWvBw8PD28kB6nb2v16/ab6Hh4eHV07V8y0+H2ut71+31/Vq8fDw8C7wkkMAk2NVbWwxaZSLXwx4eHh4Y14+1kpCislgbK+oRCUKDw8P7ygv33bbv06C4KT8RO0+Hh4e3lHefNCVb+55K5wgo8AXDw8P7zJv3i7XFakMattjYXh4eHg3eMmP+b24oY052kFa8pjw8PDw7vHyYVjLzo8F7D2y/PgCHh4e3ilevgXn0UN7z6lDV3h4eHjP4bWtcBvInnoQ9VwODw8P7xDv1PBp0lJPIpJfBmB4eHh4F3jz1jb/yjaiTUZcL1eFh4eH90+8ZODUBgf5pr/XZOPh4eHd5u0dGjg1c9uLKqLHh4eHh3eBtxdA5PHuXvy613a/bNnx8PDwLvOScVS+oScN+iQaji48PDy8o7y9aDXZvtutvD2UEBUVPDw8vAu89rDUXgDRPsS9lRTlAQ8PD+8yb29bT0h7BwLyYBcPDw/vBi+PBtpFtyOxs203Hh4e3nt47eImS09g0XBrPWbDw8PDu8Bro9tJGHEKMxrg4eHh4Y15n+XVNrv5PXsHFP74GYCHh4d3gddOkfJBfk5teXUbjYeHh3eBt1cM9jr3tjxM1oCHh4d3m9duynmTPWma80AEDw8P75m8Fjk5cJBHFX/cj4eHh/cA3ny7b8tJ/sgOFAY8PDy8mPfOoVf7ENsRGh4eHt5t3nwAlg/1kyY4/4Q2tsDDw8Mb874AHB2d0k58dYUAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -446,6 +446,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -455,14 +463,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,19 +478,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

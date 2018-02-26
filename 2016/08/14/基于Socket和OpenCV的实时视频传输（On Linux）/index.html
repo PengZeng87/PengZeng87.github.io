@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>基于Socket和OpenCV的实时视频传输（On Linux） | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上一篇介绍了在Windows上实现基于Socket和openCV的实时视频传输，这一篇将继续讲解在Linux上的实现。">
 <meta name="keywords" content="Socket,视频传输,OpenCV,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Socket和OpenCV的实时视频传输（On Linux）">
-<meta property="og:url" content="http://yoursite.com/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="上一篇介绍了在Windows上实现基于Socket和openCV的实时视频传输，这一篇将继续讲解在Linux上的实现。">
 <meta property="og:locale" content="zh-CN">
@@ -328,7 +328,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADQElEQVR42u3aO7LbMBAEQN3/0nKVIwcWOYPls0moGSngBw0FU7uL1yu+3r+vT7//vJL35E99uvPT74svbGxs7Iew34fX5J52ayabmK8TGxsbe1d2G1rJIvLoOo6otXWePIuNjY39lexkcW3M5FGKjY2Njf1z7GPA8dvW2k9r4YqNjY29N3vtM2tBsrZZ/62Xho2NjX179nzQe5/f/3S+jY2NjX0D9nvpyouWpFzJD+jkx4ZO1o+NjY29ETtvHuWj3LXmVFtgtOOHk14aNjY29qbsvK3fhsdiQz8ok4omFzY2NvYW7Lx1Pgmh4yJkbWzcHiTCxsbG/jb2WsDkcdVuSrvpJxZsbGzsjdjzozB5EOZR1w4k8ojFxsbG3o+dLHSt8GjDKW9FtQH2lz8GGxsbe2t20Zopo65t/Vx7cOckwLCxsbEfy54f3MmLkPaeqwa9J1/HxsbGfjg7/8xVw+C1iEqiNG9+YWNjY+/HXmu1r41789LiJwbD9ZEdbGxs7Iew8+KhLSraciWvnNaKFmxsbOz92PlwtA2bvH3fPpuvtv3DsLGxsZ/IbnclbxW1Q4LJeOB4DcV8GxsbG/ux7PaYTh5g+YChbR6tvb/YY2xsbOyHsCfx045yJwcl26FC9GdgY2Njb8RuH5hES/u7jcx88IyNjY29Bzsfyk5CYlK0zAcMJ00lbGxs7IezJ82atuS4ahPX4vakAsPGxsbeiN0eypk/1TaS2sZWPR7AxsbGfhS7PdSYj2bb+9tvtYXNx6YSNjY29nbsfLw6KRJaRlvenDTLsLGxsbdj5638diPm44d8g4pjQNjY2NgbsdthQBJg+T35RrRNpfpoETY2NvZj2fMAOP5wjsyja+2Lr2tzDxsbG/s27EmArbX41wbMa5jifmxsbOzHst/l1baf8retHeVZK0iwsbGxd2K3w9r8dcchNC9j8uH0a3JhY2NjP4Sdv7oeoC7Fz3HBk7eZTgonbGxs7O3YedjMA2kShEXTfzLTxsbGxv4Cdt7cmR8DWhtInMQnNjY29leyJ638dtA72fRo/djY2NjbsdeaO+2hnMm3JkPiC3pp2NjY2Ddmzwe9+VAhLx7W3n8ZGBsbG/sZ7F8e/23x+rph5QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLklEQVR42u3aQU7DUAwFQO5/adgiQdNnO5USZ7JCbUn/ZIGxn7++4uv71/Xqld+v//3572+9usPx/aufGV3Y2NjYN2F/H16vPpMgX33m+HH0HmJuwcbGxt7Kzo+bX/l9jr/9+PXqo8fGxsbGTg6RF6q85UhOhY2NjY2dF7B5K/Lp+2BjY2M/jZ23E/MYoFrkkjL2wVkaNjY29uXZeSp6/Z8/km9jY2NjX5g9GfonI6F8CDVf6ymcHxsbG3sROx+y5//6J2FAMtI6Rp7QkGBjY2OvY1dj1MlKTR4hnxUVn5YeY2NjY1+MPfmy3h3ydqK3NhS1RtjY2Njr2JMDTQZPyW9FyzfVARY2Njb2A9i9oX8+6M+HTb3C+aZ9wsbGxl7E7pGS8U0vNu61PdVxGDY2NvYmdnWw3hv99MLgvIBVyyc2Njb2PnZOqo6TquVt0mYUYmBsbGzsRexqgNprPM4aRU3i4UJDgo2NjX0rdh7xVo81iXKbBalXt7GxsbFXsKsHmg/6m6s2rUgAGxsb+wnsavFIHlCvvZkEwHmRw8bGxt7EPn4QkzB13qJM8OXoAhsbG/u27PkwqFre8lWe5PPVR4aNjY29j503HpMR/zzozd+tjquwsbGxd7DzW/cagM+1Fien3NjY2Ng3Zx/z5o1ErxBWG6HyaAkbGxv75uycWg1Ze+s1eQGrDsiiDAQbGxv7huwqsgerjvirD/SExR1sbGzsm7OTI04eU45J7p/HGG++CxsbG3sFu7rykj+gfL0mP26vmL0ZKmFjY2MvYvdKQh7cTmKGPFqITouNjY29iF3FT9Z0ei3HPAZ404FhY2Nj35ydl4R8UTIPks+aiiWNEDY2NvZWdr7U0isqk3ejXHpyYWNjY69g95qK5IjVFiVvYKrl6p/zY2NjYy9iz//mVxdr8gA4Xx5KRldNPDY2NvZN2NXhfl6uknWfXkRRXSR6mXJjY2NjL2LnizXnNgm9BqZadAvxADY2NvZq9mT0f1ZJmy/uYGNjYz+ZnY+NqkFC/u4kWsDGxsbezZ7Hsb1SNFkSqp6nGQ9gY2NjX56dH2LewEwC4Gp4gI2Njf0A9g9AlavPcw9PiAAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -490,6 +490,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -499,14 +507,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,19 +522,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

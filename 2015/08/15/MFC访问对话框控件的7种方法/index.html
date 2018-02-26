@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>MFC访问对话框控件的7种方法 | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。">
 <meta name="keywords" content="MFC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MFC访问对话框控件的7种方法">
-<meta property="og:url" content="http://yoursite.com/2015/08/15/MFC访问对话框控件的7种方法/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。">
 <meta property="og:locale" content="zh-CN">
@@ -317,7 +317,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aMW7DMAwF0Nz/0inQKUNkf5JSkuF5ClrX0VMBkSb5eMTX8/96/fx6Xd+zetrqnuT5my88PDy81tJX12rp189Jtqm6kustXn47Hh4e3jFeEgxy0vWCet+erwcPDw/vd3j50ZwzVr+dBCc8PDy83+HNj+8EXy184OHh4X2LV335T7YgKdHm23G81oKHh4cX83oNsO9+Pt7fw8PDwxs0nPKAMe/dT+5581d4eHh4B3j5EvPC67yQkW9WFDDw8PDwtvL2HtDV0YFq+bg8FoaHh4d3jJcfzZ9h9+oJb7YMDw8P7wAvr4L2CqnVRlpOnb8S4OHh4fV4vaVff02vGDEfLIjiHh4eHt6Yl9xUbUFdA+YzDkl4uGmA4eHh4W3lVQ/l+ROSbRql13h4eHhbeZOkNgf3SL2yxfKNAQ8PD28rL29K5Wl3nkb3iiDRRuPh4eEd4FWHA5IFVcNJdaSgXIzAw8PD+zgvT6Z7Y1h5gbjZAMPDw8M7wKuORk0O6HnzrJyg4+Hh4R3g5YWAHFkNPHkRpBqc8PDw8Pbyeg/Kd6s3HJCXj2+2Gw8PD+8Ar5qMVpPvSXSqbv3Nk/Hw8PA28apF2xOtrzyVr6b7eHh4eCd4OXJXeaLXWqvGuvL/EA8PD6/IywsHexPi6p3VMQU8PDy8z/CSokO1YJG0rJrpcp584+Hh4W3l5WOm88ZV/pP80L9ZGx4eHt4x3qRo2xtLrZY/mmVfPDw8vK28Z/GqlmWTZDo/7vOwsRwdwMPDwxvzJvHk2bqqAwG9VhkeHh7eaV51QfO0uBps8sCAh4eH90ler/nUGzXIl94LXXh4eHi/xsuP/nw7eq21KCzh4eHhfZU3KfhW0+u8UHvz7Xh4eHjHeJM2f/Vvq0EiT8cfvViEh4eHV+T1XvXzUkVvVGu+EXh4eHgHeH90wZKXMM2f6gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3awW7rMAwEwP7/T78H9FSgkLMkxbQoJqegtWWND5Ky5MdH/Pn3+fn6/ftfnu/9fs3prtOznp8y+uDh4eG1pn76JI9JwM8vKBnteT7HMfHw8PDWeJMF+vmlJNfkV+ZzxsPDw/sNvOqpNbmyepTHw8PD+0u8JIDIkb34Aw8PD++dvCSMmCel86P2YtaCh4eHF/N6BbCf/b5e38PDw8NrLehJdFtd9CdlrfJs8fDw8BZ4ecEp+tkfr8/zQlfe2oWHh4d3l5cHozm1uqnMxzmOj4eHh7fGS26rLu7Vu27FtcdfDHh4eHhXeb0CVd5kMN9UekU1PDw8vA1etckpP3bnI1zbBqoVPDw8PLwWb158yvHNtx43uR7re3h4eHhXefPmqrw8Vm1BqG5d0dzw8PDwLvF6EWoev1aP8vlLibYoPDw8vLfz7kYYeTEsL781W6/w8PDwrvJ6cWr1sFuNJHrzwcPDw9vm3Yple2P2mgNesPHw8PCu8nqhbXWiyYLeCzVezBkPDw9vgZcHEL16Wh5n9F5HEljg4eHhvZ+XhLDJvTm42nT14kCPh4eHt8BLEov8v9VwobotNV8QHh4e3gIvZ0yOxXn7VK9U9uIaPDw8vDGv+lO/VwDLYXkhLULi4eHhLfDy9qn8qN0rXCVx8LxBAQ8PD2/Om5zE75bN8vgjD0Hw8PDwtnnV6PZulFBt/0rmhoeHh7fByx+TP7i6VeSB76S1Cw8PD+8Wb6Nw1Rsnf92FyBgPDw9vgVftVsq3gXJwMDhql3c/PDw8vDFvEphWz++9dq5R8IGHh4e3xpssytWlf1J4K1+Dh4eH96O8/GHVYLe6/RRmiIeHh/drePmin5f/J0HG8cCNh4eHt8arNmBNilVJIFttKTiOiYeHh7fA6zU25ROdlLKqm8qF+h4eHh7eE+8/5//5PkQRxiAAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -466,6 +466,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -475,14 +483,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,19 +498,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

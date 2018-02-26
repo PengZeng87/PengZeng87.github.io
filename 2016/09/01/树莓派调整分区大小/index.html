@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>树莓派调整分区大小 | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。">
 <meta name="keywords" content="树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派调整分区大小">
-<meta property="og:url" content="http://yoursite.com/2016/09/01/树莓派调整分区大小/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。">
 <meta property="og:locale" content="zh-CN">
@@ -292,7 +292,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3ay27jMAwF0Pz/T2eArlpM41ySymAsHa2MxFV8XIDgQ49HvJ5f6/v19/X3nb3PX92zbGFgYNyW8bxc1Ufv7XN9HVExMDAOYCRB9tX9ybfXpHy3l59jYGBgBKnbPNRiYGBgrGJcl6Z58MXAwMCoMpJwmXe6Jknhx2txDAyMGzJ6g4F/c/3x+QYGBsZ/z3i21vU+ybfzMcOPv8XAwNiaMT9IkY8e86MVSSr5phbHwMDYiJGXptUBQHWHUWKKgYFxACMPgnmQnZSvyYvAwMA4jbF2xFgYOi460oGBgXECI3mUfKiZJ4vVx41msBgYGJsyepPBXiu/WsRGaSIGBsbxjOrxr2SHfM9lgwEMDIzbMvJGf96G67Xqenf+8j/BwMDYlPHpH5g/XL4DBgbGOYy8NO2VnZMg/qb0xcDAOIZRDXmFcWMx7OavDAMDY1dGdTDwCFYeTJPxZ3QPBgbG1oxqW7+X8FVfR7IDBgbGOYy8EM2PYlSPa0zKYwwMjBMYvYZ+nsw9i6v6gjAwME5gVINmktJVm27VkP2Yx34MDIxbMXptr1462Guu9V4cBgbGTox56pYftsinqeW2HQYGxtaMeYRe1SxbWzxjYGDsx+gF2bUDy2rALVTkGBgYGzEmSV4vmPbyugVHLjAwMA5gzHvy+dC0wMbAwMAIRpvVZLEHWJAaYmBg3JYxGQbk+0xe35vnwcDA2JpRzbvWDjt7Y4AFI0wMDIx7MP4A04lb0fW719kAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3azW4CMQxFYd7/padSV5VQhnPtgIpzskKUZvLNwvJPHg+8rt/1/PnvN89r9dfV/ve/2bBkyJDxtYzrdqVHJ0chu/GzyZAh4xxGLcimD1vtyV/f8nsZMmTICBffjfBkyJAhox9w+Tf8NcmQIUNGrYglx6oliB+txWXIkPGFjM5g4N2fPzTfkCFDxj9mXO2VvgIysIzPIEOGjNEMnvbVolw/fQwCsQwZMoYyeFGaXozg+/AG33JPGTJkjGbchzZecKbNuFrxLEOGjJMZneEiGT2mI4cN2a4MGTLGMWobvW+QkL4IGTJkzGakgTItPknrjf/X8jcyZMg4gNG/csEL1xSJEkoZMmSMZvAWfOczSfI2tPZkyJAxmtGpBPvgdGz5IljLkCFjKKPT6uJHSZ+StudkyJAxlZFeZeBpXyccx1fNZMiQMZqxt8VG5qV8qJA28mTIkDGVcYF1f9D+wKDGXl62kCFDxjhGmtKRoJxe+aqFb3Q5TIYMGeMYtaKRDCn3Xt0IclgZMmQMZZBEcG+Sl77c5VNkyJAxmsHb9/w6F0860/6fDBkyTmNc4UoL1M6e/DXJkCFjNoMvflEsLVN5q06GDBknMzoBkT+4llAGLTkZMmQcwOgUtGmArsX+F8+VIUOGjFJpmh6lFqBlyJAhg1+qSNt2rURQhgwZRzJIEZuG4PQyR3oGGTJknMOoDQYIjx+dg1skGTJkfB/jB7FJqHYoHbQqAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -441,6 +441,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -450,14 +458,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,19 +473,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

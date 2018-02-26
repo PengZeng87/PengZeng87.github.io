@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>一个会朗读文本的MFC应用程序 | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="闲的没事，偶然发现一个可以将文本朗读出来的MFC应用程序。甚是好奇，决定琢磨琢磨源码自己实现一遍。 下面便是我整理的开发这个小巧的文本朗读程序的步骤，步骤比较详细，可能有点繁琐，不过适合新手借此尝试体验MFC的魅力（以下示例基于VS2012完成）">
 <meta name="keywords" content="MFC,VC++,文本朗读">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个会朗读文本的MFC应用程序">
-<meta property="og:url" content="http://yoursite.com/2015/09/01/一个会朗读文本的MFC应用程序/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2015/09/01/一个会朗读文本的MFC应用程序/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="闲的没事，偶然发现一个可以将文本朗读出来的MFC应用程序。甚是好奇，决定琢磨琢磨源码自己实现一遍。 下面便是我整理的开发这个小巧的文本朗读程序的步骤，步骤比较详细，可能有点繁琐，不过适合新手借此尝试体验MFC的魅力（以下示例基于VS2012完成）">
 <meta property="og:locale" content="zh-CN">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20150901134507458">
 <meta property="og:image" content="http://img.blog.csdn.net/20150901134524391">
 <meta property="og:image" content="http://img.blog.csdn.net/20150901135243934">
-<meta property="og:image" content="http://yoursite.com/2015/09/01/一个会朗读文本的MFC应用程序/在工具箱添加编辑框控件和按钮控件：">
+<meta property="og:image" content="http://pengzeng.tech/2015/09/01/一个会朗读文本的MFC应用程序/在工具箱添加编辑框控件和按钮控件：">
 <meta property="og:image" content="http://img.blog.csdn.net/20150901135356250">
 <meta property="og:image" content="http://img.blog.csdn.net/20150901135518503">
 <meta property="og:image" content="http://img.blog.csdn.net/20150901135606387">
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3aYY7CQAgG0L3/pd0DuNYPGKybvP4yRlvemAwj8PMTX4+nq/qtV+88fz65z+ELDw8Pbxz6dVjP71dDv35WsqxJzHh4eHjbvF5Ar276agmqoffuiYeHh/dtvI2UkCwWHh4e3v/lXT++elyeFDXw8PDw7uUlxYh5KSEPKzlSH6614OHh4dV26Whr/p7XK/09PDw8vHFXfVImmKeKA3Hi4eHhrW2ByV/9XtH21JjX6GCNh4eHt8CrbsrVIm++BL2lOXzsxsPDw7vk9caeroNI2NWBrebvg4eHh7fAS7bpZFCgGvRkics/AB4eHt4Cr7cd90ag8kJGlfcmYeDh4eEd5eWF0bwkkSPzNNM74uPh4eF9hpenil4Jo5cYqk/Ew8PD2+D1NvH86Nxj9571x/Lh4eHh3cSrFlt7CaNadIg+j4eHh7fA6w0W5GNS1SGtagutN6SFh4eHt83LX+8dxCcFDjw8PLwNXj4ikDfMquMCSQx5Iomq1Hh4eHgtXhJcwqiOZFUP6M0FwsPDw1vgVRtLeam01+5KysHNfwx4eHh4h3jzLXsyHNBb3EKiwsPDw/sIL9mCe4+fjBE0y7h4eHh4C7xqoysffqqebKskPDw8vLt4+R/+vA1WLUCcGiOITvp4eHh4Y151GquXKvKxgHyoqzDghYeHh3eUl9yo11WbfysnvbwDHh4e3gJvr9GV33k071BdGjw8PLwx71G8No7gvcWNlhIPDw9vgZdfvaHS+TBB3qjL8Xh4eHhzXi8ZVBtjCW/SBntTccHDw8Nb4FUPxEkZopedqhksSgx4eHh4N/GqJYbeUTt/VnSsx8PDw7uV1wuiV4boDbYe6Lzh4eHhxby8ZDBPIdUybm9p8PDw8PZ4vZGmakDJd3tJoozBw8PD6/N+AZWOfYKamIz9AAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3a0WojMQwF0P7/T2dhnwrdmdwr25PCnnkKIXF8XLBUSV9f8fP6+/x8ff/J7+/cf2vvCvWDh4eHN9r61XP1A1efTFa+Z9yvkO8ZDw8P7zQvDwY5fhZIcl60Gh4eHt5HedFFHG8RDw8P7//htZtuX68EGzw8PLwneW3hYG9ReMbbXGvBw8PDm+fARQPsU68f6u/h4eHhlV31PFS0DbP7nezaLR4eHt4JXpKqtkXVdlBg5f0o9cfDw8PbymsHrVYy1bzgmx/xm1QbDw8P7xhvliLnifIMk//65Tt4eHh4B3jtFtsRgfy7syGt6M+Ah4eHt5XXliHaUa2V8kR7QBsKuHh4eHgxr72g80LDLCGeHTEeHh7eZ3lJC382IJUXYdvCx2VKjYeHh7eVt5IK5+MC9xtaH7qKhlnx8PDwNvHysuwM3JZoZ4XjyzXx8PDwjvHWr+Ok8b/OSwLMkWiDh4eHt3BZ72qYzRpsr/jBw8PDe5I3K7nORqmSLeYp/rANhoeHh7fMy9PclpGvmQSboqSLh4eHt5XXLjQbzGqDx0qSjYeHh/cMb+W6nx1Qiy9KD3h4eHiP8GYl2qTFVVziC4dyycbDw8M7wJsltW2yu9T4LztZeHh4eKd5s8s6H5DKr/V2QCHaIR4eHt4BXh4YEkYSDNoCbh6o3kQ8PDw8vE28XQXZder6ofxjh3h4eHgHeEl4aNtjSUliQ9WkLKPg4eHh7eK9yqc9p5Wm16wwgYeHh3ea1zafZql23tBq0/dh3MPDw8Nb5uXBYL24kKfL7djW5Zp4eHh4x3jJv/d50WFWPpiVId7sAQ8PD+8X8GbtrtlYVX6UbwYI8PDw8D7Em/1A3uhKDqVtwuHh4eGd47XNp7bt1I5SrRRwl8q4eHh4eOmtvtQAmxUakoCUrLDU2cPDw8PreH8A1ORBBXknyKUAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -494,6 +494,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -503,14 +511,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,19 +526,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://pengzeng.tech">
   <title>在Ubuntu中安装并测试OpenCV | 彭曾 | Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在Ubuntu中成功安装了opencv，并且测试成功。现把具体的安装及测试过程整理出来，适合刚刚在Linux中使用opencv的同学参考参考。">
 <meta name="keywords" content="视频传输,OpenCV,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Ubuntu中安装并测试OpenCV">
-<meta property="og:url" content="http://yoursite.com/2015/11/18/在Ubuntu中安装并测试OpenCV/index.html">
+<meta property="og:url" content="http://pengzeng.tech/2015/11/18/在Ubuntu中安装并测试OpenCV/index.html">
 <meta property="og:site_name" content="彭曾 | Vincent Peng">
 <meta property="og:description" content="在Ubuntu中成功安装了opencv，并且测试成功。现把具体的安装及测试过程整理出来，适合刚刚在Linux中使用opencv的同学参考参考。">
 <meta property="og:locale" content="zh-CN">
@@ -312,7 +312,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3a0U4CQQwFUP7/pzHxyURZbtspYjz7RAwsc8Zkp9z2douv++eVvP56fX/P9TuT9982Ljw8PLzW0h9dj74yX2jvPtefTd6Ph4eHt83LD4PkIZ7zkuOhuk14eHh478PrbURSEFcPFTw8PLy/wrsuhfPYond/PDw8vHfjJUFAdbnVjcsD35WsBQ8PDy/mnW2Aveb1r/X38PDw/j3vPrhOhbDVo6iwQjw8PLwFXm+kqVde9+LaSTMMDw8Pb483aVz16tjkeEgGuQrFNx4eHt4hXh62VltTvb9Pxhd+WDMeHh7eGi8pcHvtrgNRwuVnn7Dx8PDwFnjVB+68RO5FtElIEQ1d4eHh4R3lzZ+o1WZ/b9KhGlLg4eHhneWdim6f7F8cOlS35sm34OHh4a3xDjTmi/HEqcZYeSYCDw8P7yhvPjjVK9Crra/CPwMPDw9vjZfcetIe640CVIvvKIzAw8PDG/N6g1bJw3oeMeQBceEHAB4eHt6YV23nVwPZ/J759uUHDx4eHt4eL1/6pPGfFL6Tkv3hLwY8PDy8o7zeIk7Fr/nGVUNkPDw8vG1ejmmWtvHdeofBEwUeHh7eGm9SBM8D3N4xEKXUeHh4eMu8fLmFCCCIG/J75sOseHh4eK/hzQvcXsOsV45H34WHh4e3wKu2taqP5smh0mRMunZ4eHh4AS9vR+0NYOXFdP53PDw8vFfyerFCb4CgGtqWLzw8PLyjvHvxSpbVK6aro6vRevDw8PAWePPDI7lpNRe5ZjQHCPDw8PCO8vLDoBo0zCPjaqT7cOgKDw8Pb4GXBAr5V+YbN+rXJSvBw8PDewNeUs5WW2K9wazoQMLDw8P7Vd5rWmVJCy3fejw8PLw9Xt70yhd0Nq5txsR4eHh4C7xJA6wK6EUSybhAs7OHh4eHV+N9AN0tfYItCgfzAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3a0UoDQQwF0P7/T1fwSdBtb5JJW+Hsk9SyO2eETbyZ2y2+7t/X1Sf3H1fyneTz3/e5+u2BCw8PD6+19KsrX+jj7ciR1Q19sh48PDy8Nd7jJT6+xdUnpzYowV9+joeHh/dWXvLK7jXZyX3w8PDw/iMvLwyPG9+kLf7ouoeHh4fXekAe5vaKTTX8PZC14OHh4cW86gDsE35enO/h4eHhDabqvbC1N7vPG/fCavHw8PAWeHksO4kt8vFY0rJX4wk8PDy8DV71SNN8MJYvPY90n1Dx8PDwDvFOJRl5MajerXpI64//GPDw8PCO8vJW9dTgPx+YzSMJPDw8vD3efAA2gSVN+aTM4OHh4Z3l9SLXXtSbhBTzth4PDw9vm5c/rBrp9ravFxMXRl94eHh4C7xeAZiUliop3zg8PDy8bV4vGugFDb0jVs1GHw8PD2+Nl7fO1aZ8I+AoBLt4eHh4L+QlJaE6zu/dOf8HAA8PD+81vN7D5iUkb7h7ZQkPDw9vg9cb2OcNca9FTjBRIcHDw8Nb5uVD/WpbXDggFQTBeaHCw8PD2+D1Wt5eq523zr3vN3MXPDw8vDGvuvS8hEyOF/QiEjw8PLwN3uRVOzkgVX1ilY2Hh4f3Sl4eDfSCgwkmX1UhpcbDw8Nr8U6dVspf2b3QofonwcPDw9vgJYubHwjoHU3IC9UTPB4eHt5RXqSPi0Ty0s+PWOVbc3l/PDw8vGVeXh7mAW4vhijUurzi4eHh4RV5kzY3b76rI//eVo6oeHh4eEXepBjkD54Xj+qwDQ8PD2+bVz3qlFDz5UYLbQ3n8PDw8N7Lqx7JOhV55EOyy8QFDw8P7wN4OT7PQnphxJNYBA8PD2+Nlx9mqg608lgh2b7qwQU8PDy8Dd5kANbboOoxgmNHBPDw8PCmvC/Am0EFwJ+QaQAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -474,6 +474,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -483,14 +491,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频传输</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,19 +506,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VLFeat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
