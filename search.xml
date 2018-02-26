@@ -314,35 +314,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MFC中加入控制台Console]]></title>
-      <url>/2016/03/10/MFC%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%8E%A7%E5%88%B6%E5%8F%B0Console/</url>
-      <content type="html"><![CDATA[<ol>
-<li>包含头文件：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"io.h"</span>  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fcntl.h"</span>  </span></span><br></pre></td></tr></table></figure>
-<a id="more"></a></li>
-<li><p>添加函数:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> xxxDlg::InitConsole()  </span><br><span class="line">&#123;  </span><br><span class="line">	<span class="keyword">int</span> nRet= <span class="number">0</span>;  </span><br><span class="line">    FILE* fp;  </span><br><span class="line">    AllocConsole();  </span><br><span class="line">    nRet= _open_osfhandle((<span class="keyword">long</span>)GetStdHandle(STD_OUTPUT_HANDLE), _O_TEXT);  </span><br><span class="line">    fp = _fdopen(nRet, <span class="string">"w"</span>);  </span><br><span class="line">    *<span class="built_in">stdout</span> = *fp;  </span><br><span class="line">    setvbuf(<span class="built_in">stdout</span>, <span class="literal">NULL</span>, _IONBF, <span class="number">0</span>);  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用 InitConsole() (一般在OnInitialDlg中)。</p>
-</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 技术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MFC </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[注册MSComm32.ocx串口控件]]></title>
       <url>/2016/03/10/%E6%B3%A8%E5%86%8CMSComm32.ocx%E4%B8%B2%E5%8F%A3%E6%8E%A7%E4%BB%B6/</url>
       <content type="html"><![CDATA[<p>具体步骤：</p>
@@ -366,6 +337,35 @@
             <tag> MFC </tag>
             
             <tag> 串口通信 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MFC中加入控制台Console]]></title>
+      <url>/2016/03/10/MFC%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%8E%A7%E5%88%B6%E5%8F%B0Console/</url>
+      <content type="html"><![CDATA[<ol>
+<li>包含头文件：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"io.h"</span>  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fcntl.h"</span>  </span></span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li><p>添加函数:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> xxxDlg::InitConsole()  </span><br><span class="line">&#123;  </span><br><span class="line">	<span class="keyword">int</span> nRet= <span class="number">0</span>;  </span><br><span class="line">    FILE* fp;  </span><br><span class="line">    AllocConsole();  </span><br><span class="line">    nRet= _open_osfhandle((<span class="keyword">long</span>)GetStdHandle(STD_OUTPUT_HANDLE), _O_TEXT);  </span><br><span class="line">    fp = _fdopen(nRet, <span class="string">"w"</span>);  </span><br><span class="line">    *<span class="built_in">stdout</span> = *fp;  </span><br><span class="line">    setvbuf(<span class="built_in">stdout</span>, <span class="literal">NULL</span>, _IONBF, <span class="number">0</span>);  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用 InitConsole() (一般在OnInitialDlg中)。</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MFC </tag>
             
         </tags>
         
