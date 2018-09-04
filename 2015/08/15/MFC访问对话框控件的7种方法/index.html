@@ -16,21 +16,21 @@
 <meta property="og:site_name" content="彭曾 Vincent Peng">
 <meta property="og:description" content="今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815203632654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815204443826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815204532902?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815204643514?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815202730150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815204818207?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815205027781?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815205057196?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815205118026?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150815205611663?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-09-04T14:24:35.290Z">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815203632654.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815204443826.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815204532902.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815204643514.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815202730150.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815204818207.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815205027781.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815205057196.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815205118026.png">
+<meta property="og:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815205611663.png">
+<meta property="og:updated_time" content="2018-09-04T15:12:17.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MFC访问对话框控件的7种方法">
 <meta name="twitter:description" content="今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20150815203632654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta name="twitter:image" content="http://pengzeng.tech/2015/08/15/MFC访问对话框控件的7种方法/MFC访问对话框控件的7种方法/20150815203632654.png">
   
     <link rel="alternative" href="/atom.xml" title="彭曾 Vincent Peng" type="application/atom+xml">
   
@@ -205,25 +205,25 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。<br>首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。<br><a id="more"></a><br>添加完成后就成了下面这个样子：<br><img src="https://img-blog.csdn.net/20150815203632654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+        <p>今天下午整理了下MFC访问对话框控件的一些常用方法，一共这里出7种常用方法。下面我以实现一则加法运算为例介绍这7种方法。<br>首先建工程添加所需的控件，添加这些控件很简单我就不一一介绍了。<br><a id="more"></a><br>添加完成后就成了下面这个样子：<br><img src="./MFC访问对话框控件的7种方法/20150815203632654.png" alt=""></p>
 <p>上面各各个控件的功能大家应该都能看懂没有问题，7个“=”分别对应着这7种方法。<br>3个编辑框从左到右分别是 IDC_EDIT1、IDC_EDIT2 和 IDC_EDIT3；<br>7个“=”从上到下分别是从 IDC_BUTTON1 到 IDC_BUTTON7。</p>
 <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>读编辑框数据：<br><code>GetDlgItem(IDC_EDIT)-&gt;GetWindowText(string ,length);</code><br>写编辑框数据：<br><code>GetDlgItem(IDC_EDIT)-&gt;SetWindowText(string);</code></p>
-<p>代码实现如下图所示：<br><img src="https://img-blog.csdn.net/20150815204443826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如下图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815204443826.png" alt=""></p>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>读编辑框数据：<br><code>GetDlgItemText(IDC_EDIT,string,length);</code><br>写编辑框数据：<br><code>SetDlgItemText(IDC_EDIT,string);</code></p>
-<p>代码实现如下图所示：<br><img src="https://img-blog.csdn.net/20150815204532902?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如下图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815204532902.png" alt=""></p>
 <h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>读编辑框数据：<br><code>value=GetDlgItemInt(IDC_EDIT);</code><br>写编辑框数据：<br><code>SetDlgItemInt(IDC_EDIT,value);</code></p>
-<p>代码实现如下图所示：<br><img src="https://img-blog.csdn.net/20150815204643514?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如下图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815204643514.png" alt=""></p>
 <p><strong>方法四与方法五常用到的四个函数</strong>：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">DoDataExchange</span>();</span><br><span class="line"><span class="selector-tag">DDC_xxxx</span>();<span class="comment">//关联变量</span></span><br><span class="line"><span class="selector-tag">DDV_xxxx</span>();<span class="comment">//验证变量</span></span><br><span class="line"><span class="selector-tag">UpdateData</span>();<span class="comment">//UpdateData(TRUE)为从编辑框获取数据，UpdateData(FALSE)为更新数据到编辑框</span></span><br></pre></td></tr></table></figure></p>
-<p>方法四与方法五需添加成员变量如下图所示：<br><img src="https://img-blog.csdn.net/20150815202730150?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>方法四与方法五需添加成员变量如下图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815202730150.png" alt=""></p>
 <h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><p>把控件和整型变量相关联：如为控件添加整型成员变量 <em>m_num</em><br>对整型成员变量直接进行操作</p>
-<p>代码实现如下图所示：<br><img src="https://img-blog.csdn.net/20150815204818207?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如下图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815204818207.png" alt=""></p>
 <h3 id="方法五"><a href="#方法五" class="headerlink" title="方法五"></a>方法五</h3><p>把控件和控件变量相关联：如为控件添加控件成员变量 <em>m_edit</em><br>对控件类进行操作:<br>读编辑框数据：<br><code>m_edit.GetWindowText(ch,length);</code><br>写编辑框数据：<br><code>m_edit.SetWindowText(ch);</code></p>
-<p>代码实现如图所示：<br><img src="https://img-blog.csdn.net/20150815205027781?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815205027781.png" alt=""></p>
 <h3 id="方法六"><a href="#方法六" class="headerlink" title="方法六"></a>方法六</h3><p>发送消息函数： <em>SendMessage()</em><br>读编辑框数据：<br><code>::SendMessage(GetDlgItem(IDC_EDIT)-&gt;m_hWnd,WM_GETTEXT,length,(LPARAM)ch);</code><br>写编辑框数据：<br><code>::SendMessage(GetDlgItem(IDC_EDIT)-&gt;m_hWnd,WM_SETTEXT,0,(LPARAM)ch);</code><br>其中 <em>GetDlgItem(IDC_EDIT)-&gt;m_hWnd)</em> 为编辑框窗口句柄；</p>
-<p>代码实现如图所示：<br><img src="https://img-blog.csdn.net/20150815205057196?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815205057196.png" alt=""></p>
 <h3 id="方法七"><a href="#方法七" class="headerlink" title="方法七"></a>方法七</h3><p>发送消息函数：<em>SendDlgItemMessage()</em><br><em>SendDlgItemMessage()</em> 相当于是将 <em>SendMessage()</em> 和 <em>GetDlgItem(IDC_EDIT)-&gt;m_hWnd</em> 合并而来的；<br>读编辑框数据：<br><code>SendDlgItemMessage(IDC_EDIT,WM_GETTEXT,12,(LPARAM)ch);</code><br>写编辑框数据：<br><code>SendDlgItemMessage(IDC_EDIT,WM_SETTEXT,0,(LPARAM)ch);</code></p>
-<p>代码实现如图所示：<br><img src="https://img-blog.csdn.net/20150815205118026?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<p>最后附上效果图一张:<br><img src="https://img-blog.csdn.net/20150815205611663?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>代码实现如图所示：<br><img src="./MFC访问对话框控件的7种方法/20150815205118026.png" alt=""></p>
+<p>最后附上效果图一张:<br><img src="./MFC访问对话框控件的7种方法/20150815205611663.png" alt=""></p>
 <p>这7个方法中第4个方法最简单，但我们最好能把这7个方法都掌握住！</p>
 
       
@@ -454,6 +454,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Kinect</a>
               </li>
              
@@ -466,11 +470,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">串口通信</a>
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,11 +482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">三维重建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
+                <a href="javascript:void(0)" class="js-tag color5">串口通信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +506,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">三维重建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">mrpt</a>
               </li>
              
@@ -519,10 +523,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">激光雷达</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
