@@ -16,37 +16,37 @@
 <meta property="og:site_name" content="彭曾 Vincent Peng">
 <meta property="og:description" content="闲的没事，偶然发现一个可以将文本朗读出来的MFC应用程序。甚是好奇，决定琢磨琢磨源码自己实现一遍。 下面便是我整理的开发这个小巧的文本朗读程序的步骤，步骤比较详细，可能有点繁琐，不过适合新手借此尝试体验MFC的魅力（以下示例基于VS2012完成）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901134414250">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901134507458">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901134524391">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135243934">
-<meta property="og:image" content="http://pengzeng.tech/2015/09/01/一个会朗读文本的MFC应用程序/在工具箱添加编辑框控件和按钮控件：">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135356250">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135518503">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135606387">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135714758">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901135738589">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140017359">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140222866">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140355197">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140532046">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140635193">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140652247">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140731989">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901140936552">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141016908">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141034842">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141116870">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141230521">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141354745">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141445078">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141515398">
-<meta property="og:image" content="http://img.blog.csdn.net/20150901141604409">
-<meta property="og:updated_time" content="2018-01-08T02:36:47.354Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901134414250">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901134507458">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901134524391">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135243934">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135436807">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135356250">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135518503">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135606387">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135714758">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901135738589">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140017359">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140222866">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140355197">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140532046">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140635193">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140652247">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140731989">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901140936552">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141016908">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141034842">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141116870">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141230521">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141354745">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141445078">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141515398">
+<meta property="og:image" content="https://img-blog.csdn.net/20150901141604409">
+<meta property="og:updated_time" content="2018-09-04T14:22:08.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个会朗读文本的MFC应用程序">
 <meta name="twitter:description" content="闲的没事，偶然发现一个可以将文本朗读出来的MFC应用程序。甚是好奇，决定琢磨琢磨源码自己实现一遍。 下面便是我整理的开发这个小巧的文本朗读程序的步骤，步骤比较详细，可能有点繁琐，不过适合新手借此尝试体验MFC的魅力（以下示例基于VS2012完成）">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20150901134414250">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20150901134414250">
   
     <link rel="alternative" href="/atom.xml" title="彭曾 Vincent Peng" type="application/atom+xml">
   
@@ -223,27 +223,27 @@ var _hmt = _hmt || [];
       
         <p>闲的没事，偶然发现一个可以将文本朗读出来的MFC应用程序。<br>甚是好奇，决定琢磨琢磨源码自己实现一遍。</p>
 <p>下面便是我整理的开发这个小巧的文本朗读程序的步骤，步骤比较详细，可能有点繁琐，不过适合新手借此尝试体验MFC的魅力（以下示例基于VS2012完成）<a id="more"></a><br>示例源码及需要的资料在此处下载：<br><a href="http://download.csdn.net/detail/pengz0807/9070099" target="_blank" rel="noopener">http://download.csdn.net/detail/pengz0807/9070099</a></p>
-<p>首先建立一个名为Speaker的基于对话框的MFC应用程序：<br><img src="http://img.blog.csdn.net/20150901134414250" alt=""><br><img src="http://img.blog.csdn.net/20150901134507458" alt=""><br><img src="http://img.blog.csdn.net/20150901134524391" alt=""></p>
-<p>删除原有控件后如下图所示：<br><img src="http://img.blog.csdn.net/20150901135243934" alt=""></p>
-<p>在工具箱添加编辑框控件和按钮控件：<br><img src="在工具箱添加编辑框控件和按钮控件：" alt=""></p>
-<p>打开编辑框属性，更改ID为IDC_TEXT：<br><img src="http://img.blog.csdn.net/20150901135356250" alt=""></p>
-<p>继续更改编辑框属性：<br><img src="http://img.blog.csdn.net/20150901135518503" alt=""></p>
-<p>打开按钮控件属性，更改按钮控件ID为IDC_SPEAK：<br><img src="http://img.blog.csdn.net/20150901135606387" alt=""></p>
-<p>继续更改按钮属性：<br><img src="http://img.blog.csdn.net/20150901135714758" alt=""></p>
-<p>试运行一下：<br><img src="http://img.blog.csdn.net/20150901135738589" alt=""></p>
-<p>为编辑框控件IDC_TEXT添加控件变量m_UserText:<br><img src="http://img.blog.csdn.net/20150901140017359" alt=""><br><img src="http://img.blog.csdn.net/20150901140222866" alt=""></p>
-<p>为按钮控件IDC_SPEAK添加消息处理函数，双击按钮控件即可自动添加如下消息处理函数：<br><img src="http://img.blog.csdn.net/20150901140355197" alt=""></p>
-<p>将资料包里的头文件”ComAutoInit.h”和”TextSpeaker.h” 放到…\Speaker\Speaker目录下:<br><img src="http://img.blog.csdn.net/20150901140532046" alt=""></p>
-<p>然后将这两个头文件添加到项目头文件里：<br><img src="http://img.blog.csdn.net/20150901140635193" alt=""><br><img src="http://img.blog.csdn.net/20150901140652247" alt=""></p>
-<p>打开头文件SpeakerDlg.h，添加以下语句包含头文件”ComAutoInit.h”和”TextSpeaker.h”：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ComAutoInit.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"TextSpeaker.h"</span></span></span><br></pre></td></tr></table></figure><br><img src="http://img.blog.csdn.net/20150901140731989" alt=""></p>
-<p>打开类向导，为CSpeakerDlg类添加成员变量m_TextSpeaker，类型为gds::CTextSpeaker：<br><img src="http://img.blog.csdn.net/20150901140936552" alt=""><br><img src="http://img.blog.csdn.net/20150901141016908" alt=""><br><img src="http://img.blog.csdn.net/20150901141034842" alt=""></p>
-<p>添加完成后如下图所示：<br><img src="http://img.blog.csdn.net/20150901141116870" alt=""></p>
+<p>首先建立一个名为Speaker的基于对话框的MFC应用程序：<br><img src="https://img-blog.csdn.net/20150901134414250" alt=""><br><img src="https://img-blog.csdn.net/20150901134507458" alt=""><br><img src="https://img-blog.csdn.net/20150901134524391" alt=""></p>
+<p>删除原有控件后如下图所示：<br><img src="https://img-blog.csdn.net/20150901135243934" alt=""></p>
+<p>在工具箱添加编辑框控件和按钮控件：<br><img src="https://img-blog.csdn.net/20150901135436807" alt=""></p>
+<p>打开编辑框属性，更改ID为IDC_TEXT：<br><img src="https://img-blog.csdn.net/20150901135356250" alt=""></p>
+<p>继续更改编辑框属性：<br><img src="https://img-blog.csdn.net/20150901135518503" alt=""></p>
+<p>打开按钮控件属性，更改按钮控件ID为IDC_SPEAK：<br><img src="https://img-blog.csdn.net/20150901135606387" alt=""></p>
+<p>继续更改按钮属性：<br><img src="https://img-blog.csdn.net/20150901135714758" alt=""></p>
+<p>试运行一下：<br><img src="https://img-blog.csdn.net/20150901135738589" alt=""></p>
+<p>为编辑框控件IDC_TEXT添加控件变量m_UserText:<br><img src="https://img-blog.csdn.net/20150901140017359" alt=""><br><img src="https://img-blog.csdn.net/20150901140222866" alt=""></p>
+<p>为按钮控件IDC_SPEAK添加消息处理函数，双击按钮控件即可自动添加如下消息处理函数：<br><img src="https://img-blog.csdn.net/20150901140355197" alt=""></p>
+<p>将资料包里的头文件”ComAutoInit.h”和”TextSpeaker.h” 放到…\Speaker\Speaker目录下:<br><img src="https://img-blog.csdn.net/20150901140532046" alt=""></p>
+<p>然后将这两个头文件添加到项目头文件里：<br><img src="https://img-blog.csdn.net/20150901140635193" alt=""><br><img src="https://img-blog.csdn.net/20150901140652247" alt=""></p>
+<p>打开头文件SpeakerDlg.h，添加以下语句包含头文件”ComAutoInit.h”和”TextSpeaker.h”：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ComAutoInit.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"TextSpeaker.h"</span></span></span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdn.net/20150901140731989" alt=""></p>
+<p>打开类向导，为CSpeakerDlg类添加成员变量m_TextSpeaker，类型为gds::CTextSpeaker：<br><img src="https://img-blog.csdn.net/20150901140936552" alt=""><br><img src="https://img-blog.csdn.net/20150901141016908" alt=""><br><img src="https://img-blog.csdn.net/20150901141034842" alt=""></p>
+<p>添加完成后如下图所示：<br><img src="https://img-blog.csdn.net/20150901141116870" alt=""></p>
 <p>打开 SpeakerDlg.cpp，为函数voidCSpeakerDlg::OnBnClickedSpeak() 添加如下代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取编辑框里用户输入的文字</span></span><br><span class="line">staticconst <span class="keyword">int</span> cchMaxUserTextLen = <span class="number">20000</span>;<span class="comment">//可朗读文字最大长度</span></span><br><span class="line">WCHARszUserText[cchMaxUserTextLen + <span class="number">1</span>]; </span><br><span class="line">m_UserText.GetWindowText(szUserText,cchMaxUserTextLen);</span><br><span class="line"></span><br><span class="line"><span class="comment">//用一个方便的字符串实例包裹用户输入的文字</span></span><br><span class="line">CStringWtext(szUserText);</span><br><span class="line"><span class="keyword">if</span>(text.Trim().IsEmpty())</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//编辑框里用户输入的文字不能为空</span></span><br><span class="line">	AfxMessageBox(_T(<span class="string">"编辑框为空！"</span>),MB_OK|MB_ICONERROR);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//朗读文字</span></span><br><span class="line">m_TextSpeaker.Speak(text);</span><br></pre></td></tr></table></figure></p>
-<p>如下图所示：<br><img src="http://img.blog.csdn.net/20150901141230521" alt=""></p>
-<p>到此基本已经完成，试运行如图所示：<br><img src="http://img.blog.csdn.net/20150901141354745" alt=""></p>
-<p>接下来添加一些小部件：<br>添加静态文本框，可以写上自己的签名哦~<br><img src="http://img.blog.csdn.net/20150901141445078" alt=""></p>
-<p>设置窗口最小化：<br><img src="http://img.blog.csdn.net/20150901141515398" alt=""></p>
-<p>Ok 运行~<br><img src="http://img.blog.csdn.net/20150901141604409" alt=""></p>
+<p>如下图所示：<br><img src="https://img-blog.csdn.net/20150901141230521" alt=""></p>
+<p>到此基本已经完成，试运行如图所示：<br><img src="https://img-blog.csdn.net/20150901141354745" alt=""></p>
+<p>接下来添加一些小部件：<br>添加静态文本框，可以写上自己的签名哦~<br><img src="https://img-blog.csdn.net/20150901141445078" alt=""></p>
+<p>设置窗口最小化：<br><img src="https://img-blog.csdn.net/20150901141515398" alt=""></p>
+<p>Ok 运行~<br><img src="https://img-blog.csdn.net/20150901141604409" alt=""></p>
 <p>大功告成！快去享受成功的喜悦吧！~~<br>可能需要的资料在此处下载：<br><a href="http://img.blog.csdn.net/20150901141604409" target="_blank" rel="noopener">http://download.csdn.net/detail/pengz0807/9070099</a></p>
 
       
@@ -502,15 +502,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">VC++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文本朗读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">三维重建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,14 +538,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">三维重建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">mrpt</a>
               </li>
              
@@ -551,6 +547,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">激光雷达</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
