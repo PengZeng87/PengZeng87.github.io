@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="彭曾 Vincent Peng">
 <meta property="og:description" content="我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/树莓派调整分区大小/20170703165037761.png">
-<meta property="og:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/树莓派调整分区大小/20141206220858.png">
-<meta property="og:updated_time" content="2018-09-04T14:57:39.957Z">
+<meta property="og:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/20170703165037761.png">
+<meta property="og:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/20141206220858.png">
+<meta property="og:updated_time" content="2018-09-04T15:26:15.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派调整分区大小">
 <meta name="twitter:description" content="我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。">
-<meta name="twitter:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/树莓派调整分区大小/20170703165037761.png">
+<meta name="twitter:image" content="http://pengzeng.tech/2016/09/01/树莓派调整分区大小/20170703165037761.png">
   
     <link rel="alternative" href="/atom.xml" title="彭曾 Vincent Peng" type="application/atom+xml">
   
@@ -197,9 +197,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。<br><a id="more"></a><br>执行命令：<code>sudo fdisk /dev/mmcblk0</code><br>按<strong>P</strong><br>将看到的分区复制下来 /dev/mmcblk0p2 的start值，122880。下面会用到。<br>执行命令：<strong>d</strong>  （删除分区2,选择2）<br>执行命令：<strong>p</strong> （按这时候应该是少了一个分区了）<br>执行命令：<strong>n</strong>  (加分区)<br>执行命令：<strong>p</strong> （主要分区）<br>选择2<br>在开始位置输入 start 的值，如下图122880，看下图<br>后面的值默认即可<br>执行命令：<strong>p</strong><br>执行命令：<strong>w</strong><br><img src="./树莓派调整分区大小/20170703165037761.png" alt=""></p>
+        <p>我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。<br><a id="more"></a><br>执行命令：<code>sudo fdisk /dev/mmcblk0</code><br>按<strong>P</strong><br>将看到的分区复制下来 /dev/mmcblk0p2 的start值，122880。下面会用到。<br>执行命令：<strong>d</strong>  （删除分区2,选择2）<br>执行命令：<strong>p</strong> （按这时候应该是少了一个分区了）<br>执行命令：<strong>n</strong>  (加分区)<br>执行命令：<strong>p</strong> （主要分区）<br>选择2<br>在开始位置输入 start 的值，如下图122880，看下图<br>后面的值默认即可<br>执行命令：<strong>p</strong><br>执行命令：<strong>w</strong><br><img src="./20170703165037761.png" alt=""></p>
 <p>重启树莓派：<code>sudo reboot</code><br>开机后执行下面的命令用于修复分区：<code>sudo resize2fs /dev/mmcblk0p2</code> </p>
-<p>执行成功后，再次<strong>df</strong>看看。<br><img src="./树莓派调整分区大小/20141206220858.png" alt=""></p>
+<p>执行成功后，再次<strong>df</strong>看看。<br><img src="./20141206220858.png" alt=""></p>
 
       
 
@@ -445,19 +445,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">VC++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文本朗读</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">串口通信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,6 +458,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">VC++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文本朗读</a>
               </li>
              
               <li class="article-tag-list-item">
