@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://pengzeng.tech">
-  <title>彭曾 Vincent Peng</title>
+  <title>基于Socket和OpenCV的实时视频传输（On Windows） | 彭曾 Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="彭曾的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="彭曾 Vincent Peng">
-<meta property="og:url" content="http://pengzeng.tech/index.html">
+  <meta name="description" content="目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。">
+<meta name="keywords" content="Socket,视频传输,OpenCV">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Socket和OpenCV的实时视频传输（On Windows）">
+<meta property="og:url" content="http://pengzeng.tech/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/index.html">
 <meta property="og:site_name" content="彭曾 Vincent Peng">
-<meta property="og:description" content="彭曾的个人博客">
+<meta property="og:description" content="目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-08T02:32:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="彭曾 Vincent Peng">
-<meta name="twitter:description" content="彭曾的个人博客">
+<meta name="twitter:title" content="基于Socket和OpenCV的实时视频传输（On Windows）">
+<meta name="twitter:description" content="目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。">
   
     <link rel="alternative" href="/atom.xml" title="彭曾 Vincent Peng" type="application/atom+xml">
   
@@ -172,581 +174,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-树莓派采集HOKUYO激光雷达数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-基于Socket和OpenCV的实时视频传输（On Windows）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/">树莓派采集HOKUYO激光雷达数据</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/" class="archive-article-date">
-  	<time datetime="2016-09-02T03:52:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。<br>
-        
-          <a class="article-more-a" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mrpt</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HOKUYO</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">激光雷达</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-树莓派安装mrpt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/树莓派安装mrpt/">树莓派安装mrpt</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/02/树莓派安装mrpt/" class="archive-article-date">
-  	<time datetime="2016-09-02T01:52:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文介绍在树莓派上安装mrpt。</p>
-<p>手头有一枚树莓派，闲置很久了，最近又有个项目要用到，所以再次把她请了出来。<br>项目需要驱动机器人平台小车并采集激光雷达的数据，这时mrpt是再适合不过的了。<br>
-        
-          <a class="article-more-a" href="/2016/09/02/树莓派安装mrpt/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mrpt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/02/树莓派安装mrpt/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-树莓派调整分区大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/01/树莓派调整分区大小/">树莓派调整分区大小</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/01/树莓派调整分区大小/" class="archive-article-date">
-  	<time datetime="2016-09-01T11:47:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。<br>
-        
-          <a class="article-more-a" href="/2016/09/01/树莓派调整分区大小/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/01/树莓派调整分区大小/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Kinect的室内三维重建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Kinect的室内三维重建/">基于Kinect的室内三维重建</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/基于Kinect的室内三维重建/" class="archive-article-date">
-  	<time datetime="2016-08-14T09:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于项目要求，最近实现了基于Kinect的室内三维重建。</p>
-<p>由飞行器载着Kinect在室内扫描，获取彩图与深度图，通过Socket实时传输到PC上，实时重建出室内三维形貌。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Kinect的室内三维重建/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Kinect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">三维重建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Kinect的室内三维重建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Kinect采集彩图和深度图并通过Socket传输" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/">Kinect采集彩图和深度图并通过Socket传输</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/" class="archive-article-date">
-  	<time datetime="2016-08-14T09:08:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于项目要求，不久前实现了采集Kinect的彩图和深度图并通过Socket传输到另一台PC上。</p>
-<p>在Windows中采集，通过socket发送到Ubuntu中。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Kinect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频传输</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Socket和OpenCV的实时视频传输（On Linux）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/">基于Socket和OpenCV的实时视频传输（On Linux）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/" class="archive-article-date">
-  	<time datetime="2016-08-14T08:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇介绍了在Windows上实现基于Socket和openCV的实时视频传输，这一篇将继续讲解在Linux上的实现。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频传输</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenCV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Socket和OpenCV的实时视频传输（On Windows）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/">基于Socket和OpenCV的实时视频传输（On Windows）</a>
+    <h1 class="article-title" itemprop="name">
+      基于Socket和OpenCV的实时视频传输（On Windows）
     </h1>
   
 
@@ -759,10 +194,38 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。<br>由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。<br>这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/#more">more >></a>
-        
+        <p>目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。<br>由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。<br>这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。<br><a id="more"></a></p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>Server： Windows 10 + OpenCV2.4.10<br>Client:： Windows 10 + OpenCV2.4.10 </p>
+<h3 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h3><p>我采用的是TCP协议的通信。</p>
+<p>TCP协议通信的一般步骤：</p>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><ol>
+<li>创建一个socket，用函数socket()； </li>
+<li>设置socket属性，用函数setsockopt();* 可选</li>
+<li>绑定IP地址、端口等信息到socket上，用函数bind();* 可选</li>
+<li>设置要连接的对方的IP地址和端口等属性；</li>
+<li>连接服务器，用函数connect()；</li>
+<li>收发数据，用函数send()和recv()，或者read()和write();</li>
+<li>关闭网络连接；</li>
+</ol>
+<h4 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h4><ol>
+<li>创建一个socket，用函数socket()；</li>
+<li>设置socket属性，用函数setsockopt(); * 可选</li>
+<li>绑定IP地址、端口等信息到socket上，用函数bind();</li>
+<li>开启监听，用函数listen()； </li>
+<li>接收客户端上来的连接，用函数accept()；</li>
+<li>收发数据，用函数send()和recv()，或者read()和write();</li>
+<li>关闭网络连接； </li>
+<li>关闭监听； </li>
+</ol>
+<h3 id="图像传输类"><a href="#图像传输类" class="headerlink" title="图像传输类"></a>图像传输类</h3><p>我把图像的发送和接收分别封装在了两个类中：</p>
+<h4 id="采集与发送"><a href="#采集与发送" class="headerlink" title="采集与发送"></a>采集与发送</h4><figure class="highlight cpp"><figcaption><span>WinsockMatTransmissionClient.h</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（发送）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __WINSOCKMATTRANSMISSIONCLIENT_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __WINSOCKMATTRANSMISSIONCLIENT_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/opencv.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/highgui/highgui.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/imgproc/imgproc.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/core/core.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Winsock2.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"WS2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//待传输图像默认大小为 640*480，可修改</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_WIDTH 640	<span class="comment">// 需传输图像的宽</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_HEIGHT 480	<span class="comment">// 需传输图像的高</span></span></span><br><span class="line"><span class="comment">//默认格式为CV_8UC3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BUFFER_SIZE IMG_WIDTH*IMG_HEIGHT*3/32</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sentbuf</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> buf[BUFFER_SIZE];</span><br><span class="line">	<span class="keyword">int</span> flag;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WinsockMatTransmissionClient</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	WinsockMatTransmissionClient(<span class="keyword">void</span>);</span><br><span class="line">	~WinsockMatTransmissionClient(<span class="keyword">void</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	SOCKET sockClient;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sentbuf</span> <span class="title">data</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 打开socket连接</span></span><br><span class="line">	<span class="comment">// params :	IP		服务器的ip地址</span></span><br><span class="line">	<span class="comment">//			PORT	传输端口</span></span><br><span class="line">	<span class="comment">// return : -1		连接失败</span></span><br><span class="line">	<span class="comment">//			1		连接成功</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">socketConnect</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* IP, <span class="keyword">int</span> PORT)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 传输图像</span></span><br><span class="line">	<span class="comment">// params : image 待传输图像</span></span><br><span class="line">	<span class="comment">// return : -1		传输失败</span></span><br><span class="line">	<span class="comment">//			1		传输成功</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">transmit</span><span class="params">(cv::Mat image)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 断开socket连接</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">socketDisconnect</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>WinsockMatTransmissionClient.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（发送）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"WinsockMatTransmissionClient.h"</span></span></span><br><span class="line"></span><br><span class="line">WinsockMatTransmissionClient::WinsockMatTransmissionClient(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WinsockMatTransmissionClient::~WinsockMatTransmissionClient(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> WinsockMatTransmissionClient::socketConnect(<span class="keyword">const</span> <span class="keyword">char</span>* IP, <span class="keyword">int</span> PORT)</span><br><span class="line">&#123;</span><br><span class="line">	WORD wVersionRequested;</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">int</span> err;</span><br><span class="line"></span><br><span class="line">	wVersionRequested = MAKEWORD( <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"></span><br><span class="line">	err = WSAStartup( wVersionRequested, &amp;wsaData );</span><br><span class="line">	<span class="keyword">if</span> ( err != <span class="number">0</span> ) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( LOBYTE( wsaData.wVersion ) != <span class="number">1</span> ||</span><br><span class="line">		HIBYTE( wsaData.wVersion ) != <span class="number">1</span> ) &#123;</span><br><span class="line">			WSACleanup( );</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	err = (sockClient = socket(AF_INET,SOCK_STREAM,<span class="number">0</span>));</span><br><span class="line">	<span class="keyword">if</span> (err &lt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"create socket error: %s(errno: %d)\n\n"</span>, strerror(errno), errno);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"create socket successful!\nnow connect ...\n\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	SOCKADDR_IN addrSrv;</span><br><span class="line">	addrSrv.sin_addr.S_un.S_addr=inet_addr(IP);</span><br><span class="line">	addrSrv.sin_family=AF_INET;</span><br><span class="line">	addrSrv.sin_port=htons(PORT);</span><br><span class="line"></span><br><span class="line">	err = connect(sockClient,(SOCKADDR*)&amp;addrSrv,<span class="keyword">sizeof</span>(SOCKADDR));</span><br><span class="line">	<span class="keyword">if</span> (err &lt; <span class="number">0</span>) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"connect error: %s(errno: %d)\n\n"</span>, strerror(errno), errno);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"connect successful!\n\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> WinsockMatTransmissionClient::socketDisconnect(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">	closesocket(sockClient);</span><br><span class="line">	WSACleanup();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> WinsockMatTransmissionClient::transmit(cv::Mat image)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (image.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"empty image\n\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(image.cols != IMG_WIDTH || image.rows != IMG_HEIGHT || image.type() != CV_8UC3)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"the image must satisfy : cols == IMG_WIDTH（%d）  rows == IMG_HEIGHT（%d） type == CV_8UC3\n\n"</span>, IMG_WIDTH, IMG_HEIGHT);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">32</span>; k++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> num1 = IMG_HEIGHT / <span class="number">32</span> * k;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; IMG_HEIGHT / <span class="number">32</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> num2 = i * IMG_WIDTH * <span class="number">3</span>;</span><br><span class="line">			uchar* ucdata = image.ptr&lt;uchar&gt;(i + num1);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; IMG_WIDTH * <span class="number">3</span>; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				data.buf[num2 + j] = ucdata[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(k == <span class="number">31</span>)</span><br><span class="line">			data.flag = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			data.flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (send(sockClient, (<span class="keyword">char</span> *)(&amp;data), <span class="keyword">sizeof</span>(data), <span class="number">0</span>) &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"send msg error: %s(errno: %d)\n"</span>, strerror(errno), errno);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="图像的接收与显示"><a href="#图像的接收与显示" class="headerlink" title="图像的接收与显示"></a>图像的接收与显示</h4><figure class="highlight cpp"><figcaption><span>WinsockMatTransmissionServer.h</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（接收）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __WINSOCKMATTRANSMISSIONSEVER_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __WINSOCKMATTRANSMISSIONSEVER_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/opencv.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/highgui/highgui.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/imgproc/imgproc.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/core/core.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Winsock2.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"WS2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//待传输图像默认大小为 640*480，可修改</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_WIDTH 640	<span class="comment">// 需传输图像的宽</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IMG_HEIGHT 480	<span class="comment">// 需传输图像的高</span></span></span><br><span class="line"><span class="comment">//默认格式为CV_8UC3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BUFFER_SIZE IMG_WIDTH*IMG_HEIGHT*3/32</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">recvbuf</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> buf[BUFFER_SIZE];</span><br><span class="line">	<span class="keyword">int</span> flag;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WinsockMatTransmissionServer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	WinsockMatTransmissionServer(<span class="keyword">void</span>);</span><br><span class="line">	~WinsockMatTransmissionServer(<span class="keyword">void</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	SOCKET sockConn;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">recvbuf</span> <span class="title">data</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 打开socket连接</span></span><br><span class="line">	<span class="comment">// params :	PORT	传输端口</span></span><br><span class="line">	<span class="comment">// return : -1		连接失败</span></span><br><span class="line">	<span class="comment">//			1		连接成功</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">socketConnect</span><span class="params">(<span class="keyword">int</span> PORT)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 传输图像</span></span><br><span class="line">	<span class="comment">// params : image	待接收图像</span></span><br><span class="line">	<span class="comment">// return : -1		接收失败</span></span><br><span class="line">	<span class="comment">//			1		接收成功</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">receive</span><span class="params">(cv::Mat&amp; image)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 断开socket连接</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">socketDisconnect</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>WinsockMatTransmissionServer.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（接收）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"WinsockMatTransmissionServer.h"</span></span></span><br><span class="line"></span><br><span class="line">WinsockMatTransmissionServer::WinsockMatTransmissionServer(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WinsockMatTransmissionServer::~WinsockMatTransmissionServer(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> WinsockMatTransmissionServer::socketConnect(<span class="keyword">int</span> PORT)</span><br><span class="line">&#123;</span><br><span class="line">	WORD wVersionRequested;</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">int</span> err;</span><br><span class="line"></span><br><span class="line">	wVersionRequested = MAKEWORD(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	err = WSAStartup(wVersionRequested, &amp;wsaData);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (err != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (LOBYTE(wsaData.wVersion) != <span class="number">1</span> ||</span><br><span class="line">		HIBYTE(wsaData.wVersion) != <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		WSACleanup();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	SOCKET sockSrv = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	SOCKADDR_IN addrSrv;</span><br><span class="line">	addrSrv.sin_addr.S_un.S_addr = htonl(INADDR_ANY);</span><br><span class="line">	addrSrv.sin_family = AF_INET;</span><br><span class="line">	addrSrv.sin_port = htons(PORT);</span><br><span class="line">	bind(sockSrv, (SOCKADDR*)&amp;addrSrv, <span class="keyword">sizeof</span>(SOCKADDR));</span><br><span class="line">	listen(sockSrv, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">	SOCKADDR_IN addrClient;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="keyword">sizeof</span>(SOCKADDR);</span><br><span class="line">	sockConn = accept(sockSrv, (SOCKADDR*)&amp;addrClient, &amp;len);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> nRecvBuf = <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">10</span>;</span><br><span class="line">	setsockopt(sockConn, SOL_SOCKET, SO_RCVBUF, (<span class="keyword">const</span> <span class="keyword">char</span>*)&amp;nRecvBuf, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> WinsockMatTransmissionServer::socketDisconnect(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">	closesocket(sockConn);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> WinsockMatTransmissionServer::receive(cv::Mat&amp; image)</span><br><span class="line">&#123;</span><br><span class="line">	cv::Mat img(IMG_HEIGHT,IMG_WIDTH,CV_8UC3,cv::Scalar(0));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> needRecv = <span class="keyword">sizeof</span>(recvbuf);</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">int</span> len0 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">while</span> (pos &lt; needRecv)</span><br><span class="line">			&#123;</span><br><span class="line">				len0 = recv(sockConn, (<span class="keyword">char</span>*)(&amp;data) + pos, needRecv - pos, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">if</span> (len0 &lt; <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"Server Recieve Data Failed!\n"</span>);</span><br><span class="line">					<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				pos += len0;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			count = count + data.flag;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">int</span> num1 = IMG_HEIGHT / <span class="number">32</span> * i;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; IMG_HEIGHT / <span class="number">32</span>; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> num2 = j * IMG_WIDTH * <span class="number">3</span>;</span><br><span class="line">				uchar* ucdata = img.ptr&lt;uchar&gt;(j + num1);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; IMG_WIDTH * <span class="number">3</span>; k++)</span><br><span class="line">				&#123;</span><br><span class="line">					ucdata[k] = data.buf[num2 + k];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (data.flag == <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (count == <span class="number">33</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					image = img;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">					count = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					count = <span class="number">0</span>;</span><br><span class="line">					i = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><h4 id="采集与发送-1"><a href="#采集与发送-1" class="headerlink" title="采集与发送"></a>采集与发送</h4><figure class="highlight cpp"><figcaption><span>SocketClientMat.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（发送）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"WinsockMatTransmissionClient.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WinsockMatTransmissionClient socketMat;</span><br><span class="line">	<span class="keyword">if</span> (socketMat.socketConnect(<span class="string">"192.168.1.101"</span>, <span class="number">6666</span>) &lt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	cv::<span class="function">VideoCapture <span class="title">capture</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">	cv::Mat image;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!capture.isOpened())</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		capture &gt;&gt; image;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (image.empty())</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		socketMat.transmit(image);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	socketMat.socketDisconnect();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接收与显示"><a href="#接收与显示" class="headerlink" title="接收与显示"></a>接收与显示</h4><figure class="highlight cpp"><figcaption><span>WinsockServerMat.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*M///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  基于OpenCV和Winsock的图像传输（接收）</span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//	By 彭曾 , at CUST, 2016.08.06 </span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//	website: www.pengz0807.com  email: pengz0807@163.com </span></span><br><span class="line"><span class="comment">//	</span></span><br><span class="line"><span class="comment">//M*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"WinsockMatTransmissionServer.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WinsockMatTransmissionServer socketMat;</span><br><span class="line">	<span class="keyword">if</span> (socketMat.socketConnect(<span class="number">6666</span>) &lt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cv::Mat image;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(socketMat.receive(image) &gt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cv::imshow(<span class="string">""</span>,image);</span><br><span class="line">			cv::waitKey(<span class="number">30</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	socketMat.socketDisconnect();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将在下一篇文章中讲解Linux中基于Socket和OpenCV的实时视频传输的实现。</p>
+
       
 
       
@@ -803,16 +266,84 @@ var _hmt = _hmt || [];
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADM0lEQVR42u3aQW7jQAwEQP//015gkePK6SaTjTUpnQzFkKYmB5rseTzi6/n3ev356s7V066++by4Xn/n8R0XNjY29k3Yz5fX1UKTvyYblNxP1pZbsLGxsU9lJ0UrLy15QdpsZVJQL+9jY2Nj/0p2W2aSxiZferuJ2NjY2NjDx5WFcPYubGxsbOzZUGkzDMrDhmSw9V9nadjY2Nhvz/6qoPcdPv9Avo2NjY39o+xnec1KTj5Oyo/szNb/8RxsbGzsg9izAU0O2MQDbSOUVKtP9gwbGxv7huzZsD45sjMbOeUb3Y6csLGxsU9l50P8TcHbH+uZtStFKoKNjY19W3Y+uMmbirzA5G8cjo2ujNjY2NjHsTdDn2RT2i3YFLkorsDGxsY+lJ2PgWavbLcmH0W1/zBsbGzsk9htcZqN42eblccV7dqwsbGxT2LPhjX7ctJGvPm7IgU2Njb2Qex6HBO/rA1r9yFuXjKxsbGxT2W346G2nDyCaz8qev3NVbaAjY2N/fbsffvRjpb2jdAsQsDGxsY+iZ0sdPOjv4hd8/9SedATGxsb+2x2PsTZjIHqcc+6RYnuY2NjYx/Ebg/WfF9rMduI5JtFDcfGxsa+FXsW6+6P5mzChrwVwcbGxv4N7PxHfFtC8o3YPznf6MtWBBsbG/sg9mYEv9myvPy0B4mKDgwbGxv7huw83J2VkHZr8qB3Vq4+7mBjY2Mfzf6+1+/jgX1QMU2DsbGxsd+dPduCdjzUtj2zFUZRBzY2Nvah7FkJyePhvAnZD7A+KWPY2NjYB7HbQtWO+9uG4auKWREtY2NjY9+cnccAs1h31sbkY6Y20vhHPICNjY19EHt/TKcdMO2LXBv3YmNjY5/HbluO/IDOLGxoC2G+QmxsbOxT2c/yagc9bXszi5DbuAIbGxv7JHZbDGZFpS2H7YCpjRCwsbGxz2PnRSu5XxyXKYf+mxw7inuxsbGxb87OA9f2h/6myZlFEdE6sbGxsX8le3ZoZvacNjaox0zY2NjY2GUbs591tQ1JlGxjY2NjH8Ruh0qzkVMbPNSjorxpwcbGxj6I3RaP5GV5oLuJExLeaguwsbGx3539B8ivxdFv1IumAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于Socket和OpenCV的实时视频传输（On Linux）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/19/MFC建立模态对话框和非模态对话框/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MFC建立模态对话框和非模态对话框</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -827,289 +358,32 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MFC建立模态对话框和非模态对话框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/MFC建立模态对话框和非模态对话框/">MFC建立模态对话框和非模态对话框</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/19/MFC建立模态对话框和非模态对话框/" class="archive-article-date">
-  	<time datetime="2016-03-19T12:55:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（以下主对话框类为 MainDlg）</p>
-<p><strong>一、建立模态对话框：</strong><br>1.在资源视图里插入Dialog，对新建的对话框进行更改属性添加需要的控件等操作。<br>2.在新建的对话框中右键添加类，添加新的对话框类CModelDlg。<br>
-        
-          <a class="article-more-a" href="/2016/03/19/MFC建立模态对话框和非模态对话框/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/19/MFC建立模态对话框和非模态对话框/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境"><span class="toc-number">1.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通信协议"><span class="toc-number">2.</span> <span class="toc-text">通信协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端"><span class="toc-number">2.1.</span> <span class="toc-text">客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器端"><span class="toc-number">2.2.</span> <span class="toc-text">服务器端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像传输类"><span class="toc-number">3.</span> <span class="toc-text">图像传输类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#采集与发送"><span class="toc-number">3.1.</span> <span class="toc-text">采集与发送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图像的接收与显示"><span class="toc-number">3.2.</span> <span class="toc-text">图像的接收与显示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例代码"><span class="toc-number">4.</span> <span class="toc-text">示例代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#采集与发送-1"><span class="toc-number">4.1.</span> <span class="toc-text">采集与发送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接收与显示"><span class="toc-number">4.2.</span> <span class="toc-text">接收与显示</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-MFC串口控件MSComm的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/MFC串口控件MSComm的使用/">MFC串口控件MSComm的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/10/MFC串口控件MSComm的使用/" class="archive-article-date">
-  	<time datetime="2016-03-10T13:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（主窗口为MainDlg）</p>
-<ol>
-<li>注册串口控件</li>
-<li>对话框右键插入ActiveX控件，选择 Microsoft communications control version 6.0。</li>
-<li>MSComm控件右键添加变量m_ctrlComm;</li>
-<li><p>添加打开串口按钮响应函数：</p>
-        
-          <a class="article-more-a" href="/2016/03/10/MFC串口控件MSComm的使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">串口通信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/10/MFC串口控件MSComm的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MFC中加入控制台Console" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/MFC中加入控制台Console/">MFC中加入控制台Console</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/10/MFC中加入控制台Console/" class="archive-article-date">
-  	<time datetime="2016-03-10T12:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>包含头文件：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"io.h"</span>  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fcntl.h"</span>  </span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1134,8 +408,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

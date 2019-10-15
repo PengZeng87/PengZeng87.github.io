@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://pengzeng.tech">
-  <title>彭曾 Vincent Peng</title>
+  <title>树莓派采集HOKUYO激光雷达数据 | 彭曾 Vincent Peng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="彭曾的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="彭曾 Vincent Peng">
-<meta property="og:url" content="http://pengzeng.tech/index.html">
+  <meta name="description" content="前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。">
+<meta name="keywords" content="树莓派,mrpt,HOKUYO,激光雷达">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派采集HOKUYO激光雷达数据">
+<meta property="og:url" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/index.html">
 <meta property="og:site_name" content="彭曾 Vincent Peng">
-<meta property="og:description" content="彭曾的个人博客">
+<meta property="og:description" content="前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/20160902115049222.png">
+<meta property="og:image" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/20160902115105316.png">
+<meta property="og:image" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/20160902114952705.png">
+<meta property="og:updated_time" content="2018-09-04T15:25:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="彭曾 Vincent Peng">
-<meta name="twitter:description" content="彭曾的个人博客">
+<meta name="twitter:title" content="树莓派采集HOKUYO激光雷达数据">
+<meta name="twitter:description" content="前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。">
+<meta name="twitter:image" content="http://pengzeng.tech/2016/09/02/树莓派采集HOKUYO激光雷达数据/20160902115049222.png">
   
     <link rel="alternative" href="/atom.xml" title="彭曾 Vincent Peng" type="application/atom+xml">
   
@@ -172,16 +178,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-树莓派采集HOKUYO激光雷达数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-树莓派采集HOKUYO激光雷达数据" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/">树莓派采集HOKUYO激光雷达数据</a>
+    <h1 class="article-title" itemprop="name">
+      树莓派采集HOKUYO激光雷达数据
     </h1>
   
 
@@ -194,10 +198,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。<br>
-        
-          <a class="article-more-a" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/#more">more >></a>
-        
+        <p>前一篇讲到在树莓派上安装mrpt，其实我安装mrpt的最终目的是利用树莓派采集Hokuyo的数据。<br><a id="more"></a><br>连接Hokuyo后，要设置ip 掩码 和 网关：<br><img src="./20160902115049222.png" alt=""><br><img src="./20160902115105316.png" alt=""></p>
+<p>下面是采集Hokuyo数据并显示的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/hwdrivers/CHokuyoURG.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/hwdrivers/CSerialPort.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/gui/CDisplayWindowPlots.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/obs/CObservation2DRangeScan.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/maps/CSimplePointsMap.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/system/string_utils.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/system/threads.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mrpt/system/os.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test_HOKUYO</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mrpt::hwdrivers::CHokuyoURG		laser;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">string</span>						ip = <span class="string">"192.168.0.10"</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span>					port = <span class="number">10940</span>;</span><br><span class="line"></span><br><span class="line">	laser.setIPandPort( ip, port );</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!laser.turnOn())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Initialization failed!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	mrpt::gui::<span class="function">CDisplayWindowPlots	<span class="title">win</span><span class="params">(<span class="string">"Laser scans"</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Press any key to stop capturing..."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	mrpt::utils::CTicTac     tictac;</span><br><span class="line">	tictac.Tic();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (!mrpt::system::os::kbhit())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">bool</span> thereIsObservation,hardError;</span><br><span class="line">		mrpt::obs::CObservation2DRangeScan obs;</span><br><span class="line"></span><br><span class="line">		laser.doProcessSimple( thereIsObservation, obs, hardError );</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (hardError)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Hardware error=true!!\n"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (thereIsObservation)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">double</span> FPS = <span class="number">1.0</span> / tictac.Tac();</span><br><span class="line"></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Scan received: %u ranges, FOV: %.02fdeg, %.03fHz: mid rang=%fm\n"</span>,</span><br><span class="line">				(<span class="keyword">unsigned</span> <span class="keyword">int</span>)obs.scan.size(),</span><br><span class="line">				mrpt::utils::RAD2DEG(obs.aperture),</span><br><span class="line">				FPS,</span><br><span class="line">				obs.scan[obs.scan.size()/<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">			obs.sensorPose = mrpt::poses::CPose3D(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">			mrpt::maps::CSimplePointsMap		theMap;</span><br><span class="line">			theMap.insertionOptions.minDistBetweenLaserPoints	= <span class="number">0</span>;</span><br><span class="line">			theMap.insertObservation( &amp;obs );</span><br><span class="line"></span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">float</span>&gt;	xs,ys,zs;</span><br><span class="line">			theMap.getAllPoints(xs,ys,zs);</span><br><span class="line">			win.plot(xs,ys,<span class="string">".b3"</span>);</span><br><span class="line">			win.axis_equal();</span><br><span class="line"></span><br><span class="line">			tictac.Tic();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		mrpt::system::sleep(<span class="number">15</span>);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	laser.turnOff();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">try</span></span><br><span class="line">	&#123;</span><br><span class="line">		Test_HOKUYO();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span> (<span class="built_in">std</span>::exception &amp;e)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"EXCEPCION: "</span> &lt;&lt; e.what() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span> (...)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Another exception!!"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>CMakeLists.txt文件：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span>(sampleName HOKUYO_laser_test)</span><br><span class="line"><span class="keyword">SET</span>(PRJ_NAME <span class="string">"$&#123;sampleName&#125;"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">PROJECT</span>(<span class="variable">$&#123;PRJ_NAME&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.4</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SET</span>(EXECUTABLE_OUTPUT_PATH <span class="string">"."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;sampleName&#125;</span> HOKUYO_laser_test.cpp  ) </span><br><span class="line"></span><br><span class="line"><span class="keyword">SET_TARGET_PROPERTIES</span>(</span><br><span class="line">	<span class="variable">$&#123;sampleName&#125;</span> </span><br><span class="line">	PROPERTIES </span><br><span class="line">	PROJECT_LABEL <span class="string">"(EXAMPLE) $&#123;sampleName&#125;"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">TARGET_LINK_LIBRARIES</span>(</span><br><span class="line">	<span class="variable">$&#123;sampleName&#125;</span> </span><br><span class="line">	<span class="variable">$&#123;MRPT_LIBS&#125;</span></span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line"><span class="keyword">IF</span>(CMAKE_COMPILER_IS_GNUCXX <span class="keyword">AND</span> NOT CMAKE_BUILD_TYPE <span class="keyword">MATCHES</span> <span class="string">"Debug"</span>)</span><br><span class="line">	<span class="keyword">SET</span>(CMAKE_CXX_FLAGS <span class="string">"$&#123;CMAKE_CXX_FLAGS&#125; -O3"</span>)</span><br><span class="line"><span class="keyword">ENDIF</span>(CMAKE_COMPILER_IS_GNUCXX <span class="keyword">AND</span> NOT CMAKE_BUILD_TYPE <span class="keyword">MATCHES</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>最后获得激光雷达数据的效果图如下：<br><img src="./20160902114952705.png" alt=""></p>
+
       
 
       
@@ -242,16 +247,75 @@ var _hmt = _hmt || [];
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/02/树莓派采集HOKUYO激光雷达数据/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQVIDMQwEQP7/aajiCjEzlh320HtKhSVx78FSRv74iK/P7+vn6/X9P69Xn7n+rlefcOzCw8PD21r6ekHrd9bvt7Dkv5I14+Hh4d3m5Rt0fk+xiBfI9TvrNePh4eE9gde2vG3BmLf1eHh4eM/krUvFXtl4UGHAw8PDi3lJGJHcP4kzktJyMWvBw8PD28kB6nb2v16/ab6Hh4eHV07V8y0+H2ut71+31/Vq8fDw8C7wkkMAk2NVbWwxaZSLXwx4eHh4Y14+1kpCislgbK+oRCUKDw8P7ygv33bbv06C4KT8RO0+Hh4e3lHefNCVb+55K5wgo8AXDw8P7zJv3i7XFakMattjYXh4eHg3eMmP+b24oY052kFa8pjw8PDw7vHyYVjLzo8F7D2y/PgCHh4e3ilevgXn0UN7z6lDV3h4eHjP4bWtcBvInnoQ9VwODw8P7xDv1PBp0lJPIpJfBmB4eHh4F3jz1jb/yjaiTUZcL1eFh4eH90+8ZODUBgf5pr/XZOPh4eHd5u0dGjg1c9uLKqLHh4eHh3eBtxdA5PHuXvy613a/bNnx8PDwLvOScVS+oScN+iQaji48PDy8o7y9aDXZvtutvD2UEBUVPDw8vAu89rDUXgDRPsS9lRTlAQ8PD+8yb29bT0h7BwLyYBcPDw/vBi+PBtpFtyOxs203Hh4e3nt47eImS09g0XBrPWbDw8PDu8Bro9tJGHEKMxrg4eHh4Y15n+XVNrv5PXsHFP74GYCHh4d3gddOkfJBfk5teXUbjYeHh3eBt1cM9jr3tjxM1oCHh4d3m9duynmTPWma80AEDw8P75m8Fjk5cJBHFX/cj4eHh/cA3ny7b8tJ/sgOFAY8PDy8mPfOoVf7ENsRGh4eHt5t3nwAlg/1kyY4/4Q2tsDDw8Mb874AHB2d0k58dYUAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/02/树莓派安装mrpt/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树莓派安装mrpt</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -271,845 +335,14 @@ var _hmt = _hmt || [];
 
 
 
-
-  
-    <article id="post-树莓派安装mrpt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/02/树莓派安装mrpt/">树莓派安装mrpt</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/02/树莓派安装mrpt/" class="archive-article-date">
-  	<time datetime="2016-09-02T01:52:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文介绍在树莓派上安装mrpt。</p>
-<p>手头有一枚树莓派，闲置很久了，最近又有个项目要用到，所以再次把她请了出来。<br>项目需要驱动机器人平台小车并采集激光雷达的数据，这时mrpt是再适合不过的了。<br>
-        
-          <a class="article-more-a" href="/2016/09/02/树莓派安装mrpt/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mrpt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/02/树莓派安装mrpt/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-树莓派调整分区大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/01/树莓派调整分区大小/">树莓派调整分区大小</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/01/树莓派调整分区大小/" class="archive-article-date">
-  	<time datetime="2016-09-01T11:47:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们在往TF卡烧完系统之后，会发现TF卡的可用空间只有4G左右了，这时我们需要执行下面的操作来恢复存储空间。<br>
-        
-          <a class="article-more-a" href="/2016/09/01/树莓派调整分区大小/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/01/树莓派调整分区大小/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Kinect的室内三维重建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Kinect的室内三维重建/">基于Kinect的室内三维重建</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/基于Kinect的室内三维重建/" class="archive-article-date">
-  	<time datetime="2016-08-14T09:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于项目要求，最近实现了基于Kinect的室内三维重建。</p>
-<p>由飞行器载着Kinect在室内扫描，获取彩图与深度图，通过Socket实时传输到PC上，实时重建出室内三维形貌。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Kinect的室内三维重建/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Kinect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">三维重建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Kinect的室内三维重建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Kinect采集彩图和深度图并通过Socket传输" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/">Kinect采集彩图和深度图并通过Socket传输</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/" class="archive-article-date">
-  	<time datetime="2016-08-14T09:08:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于项目要求，不久前实现了采集Kinect的彩图和深度图并通过Socket传输到另一台PC上。</p>
-<p>在Windows中采集，通过socket发送到Ubuntu中。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Kinect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频传输</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/Kinect采集彩图和深度图并通过Socket传输/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Socket和OpenCV的实时视频传输（On Linux）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/">基于Socket和OpenCV的实时视频传输（On Linux）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/" class="archive-article-date">
-  	<time datetime="2016-08-14T08:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇介绍了在Windows上实现基于Socket和openCV的实时视频传输，这一篇将继续讲解在Linux上的实现。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频传输</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenCV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Linux）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基于Socket和OpenCV的实时视频传输（On Windows）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/">基于Socket和OpenCV的实时视频传输（On Windows）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/" class="archive-article-date">
-  	<time datetime="2016-08-14T06:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目前由于项目的需要，实现了基于Socket和OpenCV的实时视频传输。<br>由一台PC（Client客户端）采集摄像头图像后经Socket传输到另一台PC（Server服务器）再显示出来。<br>这一篇介绍在Windows上的实现，在下一篇讲解在Linux上的实现。<br>
-        
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频传输</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenCV</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/14/基于Socket和OpenCV的实时视频传输（On Windows）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MFC建立模态对话框和非模态对话框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/MFC建立模态对话框和非模态对话框/">MFC建立模态对话框和非模态对话框</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/19/MFC建立模态对话框和非模态对话框/" class="archive-article-date">
-  	<time datetime="2016-03-19T12:55:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（以下主对话框类为 MainDlg）</p>
-<p><strong>一、建立模态对话框：</strong><br>1.在资源视图里插入Dialog，对新建的对话框进行更改属性添加需要的控件等操作。<br>2.在新建的对话框中右键添加类，添加新的对话框类CModelDlg。<br>
-        
-          <a class="article-more-a" href="/2016/03/19/MFC建立模态对话框和非模态对话框/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/19/MFC建立模态对话框和非模态对话框/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MFC串口控件MSComm的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/MFC串口控件MSComm的使用/">MFC串口控件MSComm的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/10/MFC串口控件MSComm的使用/" class="archive-article-date">
-  	<time datetime="2016-03-10T13:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（主窗口为MainDlg）</p>
-<ol>
-<li>注册串口控件</li>
-<li>对话框右键插入ActiveX控件，选择 Microsoft communications control version 6.0。</li>
-<li>MSComm控件右键添加变量m_ctrlComm;</li>
-<li><p>添加打开串口按钮响应函数：</p>
-        
-          <a class="article-more-a" href="/2016/03/10/MFC串口控件MSComm的使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">串口通信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/10/MFC串口控件MSComm的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MFC中加入控制台Console" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/MFC中加入控制台Console/">MFC中加入控制台Console</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/10/MFC中加入控制台Console/" class="archive-article-date">
-  	<time datetime="2016-03-10T12:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>包含头文件：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"io.h"</span>  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fcntl.h"</span>  </span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MFC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/10/MFC中加入控制台Console/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1134,8 +367,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
