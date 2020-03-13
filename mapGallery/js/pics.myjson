@@ -49,126 +49,126 @@ var Infos = {
       "Date": "2018-08-22",
       "Lat": 52.36666666666667,
       "Lon": 4.894444444444444,
-      "Url": "./images/2018-08_Amsterdam.jpg"
+      "Url": "./images-small/2018-08_Amsterdam.jpg"
     },
     {
       "Country": "Finland",
       "Date": "",
       "Lat": 61.92388888888889,
       "Lon": 25.748055555555556,
-      "Url": "./images/2018-08_finlan airport.jpg"
+      "Url": "./images-small-small/2018-08_finlan airport.jpg"
     },
     {
       "Country": "Netherlands",
       "Date": "2019-03-31",
       "Lat": 52.22138888888889,
       "Lon": 6.8936111111111105,
-      "Url": "./images/2018-09_ensched1.jpg"
+      "Url": "./images-small/2018-09_ensched1.jpg"
     },
     {
       "Country": "Germany",
       "Date": "2018-12-22",
       "Lat": 50.94105833333333,
       "Lon": 6.959908333333334,
-      "Url": "./images/2018-12_colonel.jpg"
+      "Url": "./images-small/2018-12_colonel.jpg"
     },
     {
       "Country": "Germany",
       "Date": "2018-12-22",
       "Lat": 51.2257,
       "Lon": 6.772222222222222,
-      "Url": "./images/2018-12_dusseldorf.jpg"
+      "Url": "./images-small/2018-12_dusseldorf.jpg"
     },
     {
       "Country": "Germany",
       "Date": "2018-12-22",
       "Lat": 51.227250000000005,
       "Lon": 6.771627777777778,
-      "Url": "./images/2018-12_dusseldorf1.jpg"
+      "Url": "./images-small/2018-12_dusseldorf1.jpg"
     },
     {
       "Country": "Germany",
       "Date": "2018-12-22",
       "Lat": 50.941177777777774,
       "Lon": 6.9570694444444445,
-      "Url": "./images/2018-12_Germany.jpg"
+      "Url": "./images-small/2018-12_Germany.jpg"
     },
     {
       "Country": "Germany",
       "Date": "2018-12-22",
       "Lat": 50.94175555555555,
       "Lon": 6.957841666666667,
-      "Url": "./images/2018-12_Germany1.jpg"
+      "Url": "./images-small/2018-12_Germany1.jpg"
     },
     {
       "Country": "Portugal",
       "Date": "2018-12-24",
       "Lat": 38.70953888888889,
       "Lon": -9.137233,
-      "Url": "./images/2018-12_lisbon.jpg"
+      "Url": "./images-small/2018-12_lisbon.jpg"
     },
     {
       "Country": "Spain",
       "Date": "2018-12-28",
       "Lat": 40.41565833333333,
       "Lon": -3.714261,
-      "Url": "./images/2018-12_madrid2.jpg"
+      "Url": "./images-small/2018-12_madrid2.jpg"
     },
     {
       "Country": "Portugal",
       "Date": "2018-12-25",
       "Lat": 38.77909722222222,
       "Lon": -9.498194,
-      "Url": "./images/2018-12_sintra2.jpg"
+      "Url": "./images-small/2018-12_sintra2.jpg"
     },
     {
       "Country": "Belgium",
       "Date": "",
       "Lat": 50.85027777777778,
       "Lon": 4.351666666666667,
-      "Url": "./images/2019-03_brussels.jpg"
+      "Url": "./images-small/2019-03_brussels.jpg"
     },
     {
       "Country": "Belgium",
       "Date": "2019-02-17",
       "Lat": 50.838326055555555,
       "Lon": 4.352178833333333,
-      "Url": "./images/2019-03_brussels2.jpg"
+      "Url": "./images-small/2019-03_brussels2.jpg"
     },
     {
       "Country": "Netherlands",
       "Date": "2019-04-19",
       "Lat": 52.21790577777778,
       "Lon": 6.892377972222222,
-      "Url": "./images/2019-04-19_.jpg"
+      "Url": "./images-small/2019-04-19_.jpg"
     },
     {
       "Country": "Netherlands",
       "Date": "",
       "Lat": 52.22138888888889,
       "Lon": 6.8936111111111105,
-      "Url": "./images/2019-05-20_.jpg"
+      "Url": "./images-small/2019-05-20_.jpg"
     },
     {
       "Country": "Netherlands",
       "Date": "",
       "Lat": 52.22138888888889,
       "Lon": 6.8936111111111105,
-      "Url": "./images/2019-05-30_.jpg"
+      "Url": "./images-small/2019-05-30_.jpg"
     },
     {
       "Country": "China",
       "Date": "2020-01-12",
       "Lat": 30.68305397027778,
       "Lon": 104.1412353513889,
-      "Url": "./images/20200111_2.jpg"
+      "Url": "./images-small/20200111_2.jpg"
     },
     {
       "Country": "Netherlands",
       "Date": "2018-12-16",
       "Lat": 52.21771944444445,
       "Lon": 6.8916916666666665,
-      "Url": "./images/first snow.jpg"
+      "Url": "./images-small/first snow.jpg"
     }
   ]
 }
