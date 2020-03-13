@@ -1,0 +1,420 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Map Gallery</title>
+  <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVwtjIUmIdX-GInth2K3C0D59PZ2Qoz3Q"></script>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/PxLoader.js"></script>
+  <script type="text/javascript" src="js/PxLoaderImage.js"></script>
+  <script type="text/javascript" src="js/v3_epoly.js"></script><!-- http://www.geocodezip.com/scripts/v3_epoly.js -->
+  <script type="text/javascript" src="js/jquery.xgallerify.js"></script>
+  <script type="text/javascript" src="js/geo.myjson"></script>
+  <script type="text/javascript" src="js/pics.myjson"></script>
+  <script type="text/javascript" src="js/countryIndex.myjson"></script>
+  <script type="text/javascript" src="js/viewer.js"></script>
+  <link rel="stylesheet" href="css/viewer.css">
+  <style type="text/css">
+    .canvas-fixed {
+      max-width: 75%;
+      min-width: 348px;
+      /* huawei mate10 pro chrome 分辨率：360px*640px */
+      max-height: 80%;
+      overflow-y: auto;
+      background-color: gainsboro;
+      /* background-color: transparent; */
+      text-align: center;
+      border-radius: 5px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .photo {
+      position: relative;
+    }
+  </style>
+
+  <script type="text/javascript">
+    var map = null;
+    var countryInfoWindow = new google.maps.InfoWindow();
+    var countryCenter = [];
+    var mapStyles = [
+      {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "all",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "weight": "2.00"
+          }
+        ]
+      },
+      {
+        "featureType": "all",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "color": "#9c9c9c"
+          }
+        ]
+      },
+      {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+          {
+            "color": "#DBFEFF"
+          }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#F8EFEB"
+          }
+        ]
+      },
+      {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#F8EFEB"
+          }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+          {
+            "saturation": -100
+          },
+          {
+            "lightness": 45
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#eeeeee"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#7b7b7b"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+          {
+            "color": "#ffffff"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+          {
+            "color": "#46bcec"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#c8d7d4"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#070707"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+          {
+            "color": "#ffffff"
+          },
+          {
+            "visibility": "off"
+          }
+        ]
+      }
+    ]
+
+    function addClass(ele, classname) {
+      var oldClass = ele.className;
+      var pattern = new RegExp('(^|\\s)' + classname + '(\\s|$)');
+      if (!pattern.test(oldClass)) {
+        ele.className += ' ' + classname;
+      }
+    }
+
+    function removeClass(ele, classname) {
+      var oldClass = ele.className;
+      var pattern = new RegExp('(^|\\s)' + classname + '(\\s|$)');
+      if (pattern.test(oldClass)) {
+        ele.className = ele.className.replace(pattern, ' ');
+      }
+    }
+
+    // veiwerjs预览大图
+    function viewPic() {
+      var galley = document.getElementById("photos");
+      var viewer = new Viewer(galley, { // 参考：https://github.com/fengyuanchen/viewerjs#options
+        url: 'data-original',
+        toolbar: {
+          zoomIn: 4,
+          zoomOut: 4,
+          oneToOne: 4,
+          reset: 4,
+          prev: 1,
+          play: {
+            show: 4,
+            size: 'large',
+          },
+          next: 1,
+          rotateLeft: 0,
+          rotateRight: 0,
+          flipHorizontal: 0,
+          flipVertical: 0,
+        },
+        backdrop: true,
+        movable: true,
+        fullscreen: true,
+        transition: false,
+        title: 0,
+        navbar: 1,
+        button: 1,
+        interval: 5000,
+        hidden: function () {
+          viewer.destroy();
+        }
+      });
+      viewer.show();
+    }
+
+    function createClickablePoly(poly, label, point) {
+      if (!point && poly.getPath
+        && poly.getPath().getLength
+        && (poly.getPath().getLength > 0)
+        && poly.getPath().getAt(0)) {
+        point = poly.getPath().getAt(1);
+      }
+
+      //鼠标点击
+      google.maps.event.addListener(poly, 'click', function (event) {
+        if (event) {
+          point = event.latLng;
+        }
+
+        var html = '<div class="photos" id="photos"><center>' + label + '</center></div>';
+        var canvas = document.getElementById('canvas');
+        addClass(canvas, 'canvas-fixed');
+        canvas.innerHTML = html;
+
+        var gallery = $('.photos').gallerify({
+          margin: 2,
+          galleryMargin: 5,
+          mode: "default",
+          debounceTime: 0,
+          lastRow: 'adjust'
+        });
+
+        for (var i = 0, len = Infos.picInfos.length; i < len; i++) {
+          if (Infos.picInfos[i].Country == label) {
+            $('.photos').append('<div id="photo" onclick="viewPic()"><img data-original="' + Infos.picInfos[i].Url.replace("-small", "-big") + '" src="' + Infos.picInfos[i].Url + '"></div>');
+          }
+        }
+        $('.photos').gallerify.renderAsyncImages();
+      });
+
+      //鼠标移过来
+      google.maps.event.addListener(poly, 'mouseover', function (event) {
+        if (event) {
+          point = event.latLng;
+        }
+        countryInfoWindow.setContent('<div>' + label + '</div>');
+        countryInfoWindow.setPosition(countryCenter[label]);
+        countryInfoWindow.open(map);
+
+        poly.setOptions({ fillColor: "#FF0000", fillOpacity: "0.45" });
+      });
+
+      //鼠标移走
+      google.maps.event.addListener(poly, 'mouseout', function (event) {
+        countryInfoWindow.close();
+        poly.setOptions({ fillColor: "#FF9999", fillOpacity: "0.8" });
+      });
+    }
+
+    function generatePolygon(Square, label) {
+      var SquarePolygon = new google.maps.Polygon({
+        paths: Square,
+        strokeColor: "#FFFFFF",
+        strokeOpacity: 1,
+        strokeWeight: 0.5,
+        fillColor: "#FF9999",
+        fillOpacity: 0.8
+      });
+
+      SquarePolygon.setMap(map);
+      // 高亮显示并添加点击事件
+      createClickablePoly(SquarePolygon, label);
+    }
+
+    function init() {
+      map = new google.maps.Map(document.getElementById("map_canvas"), {
+        center: new google.maps.LatLng(37.4, 80.9),
+        zoom: 3,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        zoomControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false,
+        styles: mapStyles
+      });
+
+      // 点击地图关闭图片显示模块
+      google.maps.event.addListener(map, 'click', function () {
+        var canvas = document.getElementById('canvas');
+        removeClass(canvas, 'canvas-fixed');
+        canvas.innerHTML = "";
+      });
+
+      // 遍历添加的国家
+      $.each(Infos.countryInfos, function (k, cInfo) {
+        // 存储国家坐标
+        countryCenter[cInfo.Country] = new google.maps.LatLng(cInfo.Lat, cInfo.Lon);
+
+        // 动态加载json文件，加载该国家边界数据
+        $.getScript("js/countryIndex/" + countryIndex[cInfo.Country], function () {
+          if (polyInfo.length == 1) {
+            var Square = [];
+            $.each(polyInfo[0], function (i, LngLat) {
+              Square.push(new google.maps.LatLng(LngLat[1], LngLat[0]));
+            });
+            generatePolygon(Square, cInfo.Country);
+          }
+          else {
+            $.each(polyInfo, function (i, subArray) {
+              var Square = [];
+              $.each(subArray[0], function (i, LngLat) {
+                Square.push(new google.maps.LatLng(LngLat[1], LngLat[0]));
+              });
+              generatePolygon(Square, cInfo.Country);
+            });
+          }
+        });
+      });
+    }
+  </script>
+</head>
+
+<body style="margin:0px; padding:0px;" onload="init()">
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+  <div id="canvas"></div>
+  <!-- <div id="info"></div><script>$("#info").html("(您的浏览器的分辨率为：" + ($(document).width() + "*" + $(document).height()) + ")");</script> -->
+</body>
+
+</html>
